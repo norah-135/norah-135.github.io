@@ -289,7 +289,6 @@
             margin-bottom: 0.3rem;
         }
 
-        /* Large Showcase Items with Direct Explanations */
         .showcase-grid {
             display: flex;
             flex-direction: column;
@@ -308,7 +307,7 @@
 
         .showcase-img-holder {
             width: 100%;
-            height: 380px;
+            min-height: 380px;
             background: #070b14;
             display: flex;
             align-items: center;
@@ -319,7 +318,7 @@
 
         .showcase-img {
             width: 100%;
-            height: 100%;
+            max-height: 420px;
             object-fit: contain;
             padding: 1rem;
             transition: transform 0.3s ease;
@@ -327,6 +326,16 @@
 
         .showcase-img:hover {
             transform: scale(1.02);
+        }
+
+        .showcase-video {
+            width: 100%;
+            max-height: 440px;
+            object-fit: contain;
+            background: #000;
+            border: none;
+            outline: none;
+            display: block;
         }
 
         .showcase-info {
@@ -422,10 +431,9 @@
             <div class="section-title">Technical Projects & System Architecture</div>
             <div class="projects-grid">
                 
-                <!-- Project 1: AeroMedic (خلفية درون VTOL طبي) -->
+                <!-- Project 1: AeroMedic -->
                 <div class="project-card" onclick="openModal('modal-aeromedic')">
                     <div class="project-img-wrapper">
-                        <!-- صورة درون VTOL طبي لتوصيل الطوارئ كخلفية لبطاقة المشروع -->
                         <img class="project-img" src="https://images.unsplash.com/photo-1508614589041-895b88991e3e?auto=format&fit=crop&w=1200&q=80" alt="Medical VTOL Drone">
                         <span class="overlay-badge">In Progress / MVP</span>
                     </div>
@@ -447,7 +455,7 @@
                             <span class="tag">Semtech LoRa</span>
                             <span class="tag">Flutter</span>
                         </div>
-                        <div class="click-hint">Click to inspect technical details, schematics & MQTT pipeline ↗</div>
+                        <div class="click-hint">Click to inspect live demo, schematics & MQTT pipeline ↗</div>
                     </div>
                 </div>
 
@@ -516,26 +524,42 @@
             <h2 class="modal-title">AeroMedic: Deep Technical Architecture</h2>
             <div class="subtitle">Autonomous Cyber-Physical Emergency Telemetry Ecosystem</div>
 
-            <!-- قائمة العناصر والشروحات بالصور الكبيرة -->
             <div class="showcase-grid">
 
-                <!-- 1. MQTT Telemetry Element -->
+                <!-- 1. Live Video Demo: SOS Dispatch & MQTT Ingestion -->
                 <div class="showcase-card">
                     <div class="showcase-img-holder">
-                        <img class="showcase-img" src="MQTT.png" alt="MQTT Protocol Flow & Broker Testing">
+                        <!-- ملف الفيديو الخاص بكِ: احفظي المقطع باسم mqtt_demo.mp4 بجانب index.html -->
+                        <video class="showcase-video" autoplay loop muted playsinline controls>
+                            <source src="mqtt_demo.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                    <div class="showcase-info">
+                        <span class="showcase-badge">Live System Execution</span>
+                        <h4>End-to-End Emergency Dispatch to MQTT Broker</h4>
+                        <p>
+                            Live demonstration showing the Flutter Hub interface triggering an instant SOS alert. 
+                            Upon activation, live telemetry packets (SpO2: 96%, HR: 82 BPM) are serialized and dispatched over secure WebSockets (WSS port 8084), reaching the MQTT broker and receiving a synchronous <strong>PublishAck</strong> confirmation in real-time.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- 2. MQTT Architecture Pipeline -->
+                <div class="showcase-card">
+                    <div class="showcase-img-holder">
+                        <img class="showcase-img" src="MQTT.png" alt="MQTT Protocol Architecture">
                     </div>
                     <div class="showcase-info">
                         <span class="showcase-badge">Protocol Validation</span>
                         <h4>MQTTS Cloud Telemetry & MQTTX Broker Pipeline</h4>
                         <p>
-                            Designed a high-throughput, low-latency telemetry channel using <strong>MQTTS</strong>. 
-                            Live biomedical data and GPS distress coordinates are serialized into JSON packets and published to hierarchical topics. 
-                            Validated the pipeline using <strong>MQTTX</strong> for end-to-end broker ingestion, packet verification, and QoS reliability under intermittent networks.
+                            Hierarchical topic architecture (<code>aeromedic/emergency/alerts</code>) decoupling mobile telemetry from cloud storage. Validated under fluctuating network states using <strong>MQTTX</strong> for payload verification and QoS delivery checks.
                         </p>
                     </div>
                 </div>
 
-                <!-- 2. Circuit Schematic Design -->
+                <!-- 3. Circuit Schematic Design -->
                 <div class="showcase-card">
                     <div class="showcase-img-holder">
                         <img class="showcase-img" src="schematic.png" alt="Schematic Diagram in EasyEDA" onerror="this.src='https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=800&q=80'">
@@ -544,12 +568,12 @@
                         <span class="showcase-badge">Schematic Layer</span>
                         <h4>Complete Circuit Schematic (EasyEDA)</h4>
                         <p>
-                            Architected the full electrical schematic integrating the <strong>ESP32-C3</strong> microcontroller, <strong>Semtech SX1262 LoRa</strong> transceiver, <strong>MAX30102</strong> pulse oximeter, and <strong>ICM-42688-P</strong> 6-axis IMU with dedicated power regulation and decoupled I2C buses.
+                            Architected electrical schematics integrating the <strong>ESP32-C3</strong>, <strong>Semtech SX1262 LoRa</strong> transceiver, <strong>MAX30102</strong> pulse oximeter, and <strong>ICM-42688-P</strong> 6-axis IMU with isolated power planes and ESD protection.
                         </p>
                     </div>
                 </div>
 
-                <!-- 3. 2D PCB Traces & Routing -->
+                <!-- 4. 2D PCB Traces & Routing -->
                 <div class="showcase-card">
                     <div class="showcase-img-holder">
                         <img class="showcase-img" src="pcb_2d.png" alt="2D PCB Traces and Routing" onerror="this.src='https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=800&q=80'">
@@ -558,12 +582,12 @@
                         <span class="showcase-badge">PCB Layout</span>
                         <h4>2D Multi-Layer PCB Routing & Trace Isolation</h4>
                         <p>
-                            Routed multi-layer traces in <strong>EasyEDA</strong> with strict impedance matching for the RF LoRa antenna path, ground pouring for EMI suppression, and optimized surface-mount component footprints for wearable form-factor constraints.
+                            Routed multi-layer traces in <strong>EasyEDA</strong> with strict RF impedance matching for LoRa transmission, continuous ground pouring to minimize EMI, and compact component placement fitting wearable ergonomic contours.
                         </p>
                     </div>
                 </div>
 
-                <!-- 4. 3D Physical Board Render -->
+                <!-- 5. 3D Physical Board Render -->
                 <div class="showcase-card">
                     <div class="showcase-img-holder">
                         <img class="showcase-img" src="pcb_3d.png" alt="3D Render of Wearable PCB" onerror="this.src='https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?auto=format&fit=crop&w=800&q=80'">
@@ -572,14 +596,13 @@
                         <span class="showcase-badge">3D Assembly</span>
                         <h4>Assembled 3D PCB Physical Render</h4>
                         <p>
-                            Rendered the 3D board assembly to verify physical clearance, component heights, and connector alignments before manufacturing, ensuring seamless integration inside the 3D printed wearable strap and drone payload enclosure.
+                            Verified mechanical tolerances and clearance constraints before PCB fabrication, ensuring optimal alignment with the 3D-modeled drone payload bay and wrist-strap casing.
                         </p>
                     </div>
                 </div>
 
             </div>
 
-            <!-- تفاصيل العتاد والتصميم الميكانيكي -->
             <div class="modal-section">
                 <h4>System Architecture & Embedded Firmware</h4>
                 <ul>
@@ -654,12 +677,18 @@
         function closeModal(id) {
             document.getElementById(id).style.display = "none";
             document.body.style.overflow = "auto";
+            
+            // إيقاف تشغيل الفيديو عند إغلاق النافذة
+            const videos = document.querySelectorAll('video');
+            videos.forEach(v => v.pause());
         }
 
         window.onclick = function(event) {
             if (event.target.classList.contains('modal')) {
                 event.target.style.display = "none";
                 document.body.style.overflow = "auto";
+                const videos = document.querySelectorAll('video');
+                videos.forEach(v => v.pause());
             }
         };
 
