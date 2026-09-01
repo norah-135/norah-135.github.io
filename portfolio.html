@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Norah Alhussain | IoT & Embedded Systems Engineer</title>
+    <style>
+        :root {
+            --bg: #0f172a;
+            --card-bg: #1e293b;
+            --primary: #38bdf8;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --border: #334155;
+            --accent: #10b981;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+        body { background-color: var(--bg); color: var(--text-main); line-height: 1.6; padding: 2rem 1rem; }
+        .container { max-width: 900px; margin: 0 auto; }
+        header { text-align: center; margin-bottom: 3rem; }
+        h1 { font-size: 2.2rem; margin-bottom: 0.5rem; color: #fff; }
+        .subtitle { font-size: 1.1rem; color: var(--primary); font-weight: 500; margin-bottom: 1rem; }
+        .bio { color: var(--text-muted); max-width: 650px; margin: 0 auto 1.5rem; }
+        .links a { color: var(--text-main); text-decoration: none; margin: 0 0.5rem; padding: 0.4rem 0.8rem; background: var(--card-bg); border: 1px solid var(--border); border-radius: 6px; font-size: 0.9rem; transition: 0.2s; }
+        .links a:hover { border-color: var(--primary); color: var(--primary); }
+        .section-title { font-size: 1.4rem; margin-bottom: 1.5rem; border-bottom: 2px solid var(--border); padding-bottom: 0.5rem; color: #fff; }
+        .projects-grid { display: grid; grid-template-columns: 1fr; gap: 1.5rem; }
+        .project-card { background: var(--card-bg); border: 1px solid var(--border); border-radius: 12px; padding: 1.5rem; transition: transform 0.2s, border-color 0.2s; }
+        .project-card:hover { transform: translateY(-3px); border-color: var(--primary); }
+        .project-header { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 0.75rem; flex-wrap: wrap; gap: 0.5rem; }
+        .project-title { font-size: 1.25rem; font-weight: 600; color: #fff; }
+        .project-desc { color: var(--text-muted); font-size: 0.95rem; margin-bottom: 1rem; }
+        .project-desc ul { margin-left: 1.2rem; }
+        .project-desc li { margin-bottom: 0.4rem; }
+        .tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1rem; }
+        .tag { background: #0f172a; color: var(--primary); padding: 0.25rem 0.6rem; border-radius: 4px; font-size: 0.8rem; border: 1px solid #1e293b; }
+        .btn-view { display: inline-block; margin-top: 1rem; font-size: 0.85rem; color: var(--primary); text-decoration: none; font-weight: 600; }
+        .btn-view:hover { text-decoration: underline; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Norah Nader Alhussain</h1>
+            <div class="subtitle">Internet of Things (IoT) & Systems Architecture</div>
+            <p class="bio">B.Sc. in IoT | Specializing in embedded systems, PCB design, real-time telemetry, and cyber-physical architectures.</p>
+            <div class="links">
+                <a href="https://github.com/norah-135" target="_blank">GitHub</a>
+                <a href="https://linkedin.com/in/YOUR_LINKEDIN" target="_blank">LinkedIn</a>
+                <a href="mailto:your_email@example.com">Email</a>
+            </div>
+        </header>
+
+        <main>
+            <h2 class="section-title">Featured Projects</h2>
+            <div class="projects-grid">
+                
+                <!-- AeroMedic -->
+                <div class="project-card">
+                    <div class="project-header">
+                        <div class="project-title">AeroMedic – Autonomous Telemetry & Emergency Ecosystem</div>
+                    </div>
+                    <div class="project-desc">
+                        <ul>
+                            <li>Designed custom schematics and a wearable sensor PCB in <strong>EasyEDA</strong> with an enclosure modeled in <strong>Fusion 360</strong>.</li>
+                            <li>Engineered firmware in <strong>ESP-IDF (FreeRTOS)</strong> with <strong>NimBLE</strong> beacon advertising for zero-pairing vital streaming.</li>
+                            <li>Built a <strong>Flutter</strong> dispatch app integrated with <strong>Firebase</strong> and <strong>MQTTS (EMQX Cloud)</strong> for low-latency emergency routing.</li>
+                        </ul>
+                    </div>
+                    <div class="tags">
+                        <span class="tag">ESP-IDF</span>
+                        <span class="tag">EasyEDA PCB</span>
+                        <span class="tag">Fusion 360</span>
+                        <span class="tag">Flutter</span>
+                        <span class="tag">MQTTS</span>
+                        <span class="tag">LoRa</span>
+                    </div>
+                    <a href="https://github.com/norah-135/aeromedic" target="_blank" class="btn-view">View Repository →</a>
+                </div>
+
+                <!-- HeadTrack-Mouse -->
+                <div class="project-card">
+                    <div class="project-header">
+                        <div class="project-title">HeadTrack-Mouse – Multimodal Assistive HCI</div>
+                    </div>
+                    <div class="project-desc">
+                        <ul>
+                            <li>Fused <strong>MediaPipe Face Mesh (60 FPS)</strong> with an <strong>Arduino + MPU-6050</strong> for decoupled XY-axis cursor tracking (<10ms latency).</li>
+                            <li>Integrated an <strong>ESP32</strong> with an I2S mic (INMP441) using VAD for hands-free screen boundary lock zones.</li>
+                            <li>Built a <strong>PyQt6</strong> dashboard with <strong>Selenium</strong> for automated platform workflows and split-screen layouts.</li>
+                        </ul>
+                    </div>
+                    <div class="tags">
+                        <span class="tag">Computer Vision</span>
+                        <span class="tag">MediaPipe</span>
+                        <span class="tag">Arduino</span>
+                        <span class="tag">PyQt6</span>
+                        <span class="tag">I2S Audio</span>
+                    </div>
+                    <a href="https://github.com/norah-135/headtrack-mouse" target="_blank" class="btn-view">View Repository →</a>
+                </div>
+
+                <!-- Hujou3 -->
+                <div class="project-card">
+                    <div class="project-header">
+                        <div class="project-title">Hujou3 – Distributed Ambient Intelligence & Hardware Hub</div>
+                    </div>
+                    <div class="project-desc">
+                        <ul>
+                            <li>Architected a 3-tier distributed system separating <strong>ESP32</strong> I2S sensing, Python NLP (921.6k baud), and an <strong>Arduino R4 WiFi</strong> hub.</li>
+                            <li>Engineered an embedded 9-state FSM controlling local peripherals and Tuya Cloud smart lighting via <strong>HTTPS/TLS & HMAC-SHA256</strong>.</li>
+                            <li>Secured endpoints using token authentication and anti-replay timestamps (±5s) with <strong>mDNS</strong> service discovery.</li>
+                        </ul>
+                    </div>
+                    <div class="tags">
+                        <span class="tag">Distributed Systems</span>
+                        <span class="tag">FSM</span>
+                        <span class="tag">HMAC-SHA256</span>
+                        <span class="tag">mDNS</span>
+                        <span class="tag">HTTP/REST</span>
+                    </div>
+                    <a href="https://github.com/norah-135/hujou3-voice-powered-room-controller" target="_blank" class="btn-view">View Repository →</a>
+                </div>
+
+            </div>
+        </main>
+    </div>
+</body>
+</html>
