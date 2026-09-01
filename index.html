@@ -12,6 +12,7 @@
             --glass-hover: rgba(56, 189, 248, 0.45);
             --primary: #38bdf8;
             --accent: #34d399;
+            --accent-glow: rgba(52, 211, 153, 0.35);
             --text-main: #f8fafc;
             --text-muted: #94a3b8;
         }
@@ -150,7 +151,7 @@
 
         .project-img-wrapper {
             width: 100%;
-            height: 320px;
+            height: 330px;
             position: relative;
             overflow: hidden;
             background: #090e1a;
@@ -249,7 +250,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(4, 7, 15, 0.9);
+            background: rgba(4, 7, 15, 0.92);
             backdrop-filter: blur(14px);
             z-index: 1000;
             overflow-y: auto;
@@ -260,11 +261,11 @@
             background: #0f172a;
             border: 1px solid var(--glass-border);
             border-radius: 20px;
-            max-width: 920px;
+            max-width: 940px;
             margin: 2rem auto;
             padding: 2.5rem;
             position: relative;
-            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.7);
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.75);
         }
 
         .close-btn {
@@ -289,10 +290,102 @@
             margin-bottom: 0.3rem;
         }
 
+        /* ═══════════════════════════════════════
+           Sprint 1 & V-Model Status Tracker
+           ═══════════════════════════════════════ */
+        .vmodel-tracker-card {
+            background: linear-gradient(145deg, rgba(16, 24, 40, 0.9), rgba(15, 23, 42, 0.7));
+            border: 1px solid var(--accent);
+            box-shadow: 0 0 25px var(--accent-glow);
+            border-radius: 16px;
+            padding: 1.8rem;
+            margin: 1.8rem 0 2.5rem 0;
+        }
+
+        .vmodel-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+            margin-bottom: 1.2rem;
+        }
+
+        .sprint-badge {
+            background: rgba(52, 211, 153, 0.15);
+            color: var(--accent);
+            border: 1px solid var(--accent);
+            padding: 0.35rem 0.9rem;
+            border-radius: 20px;
+            font-weight: 700;
+            font-size: 0.85rem;
+            letter-spacing: 0.5px;
+        }
+
+        .vmodel-desc {
+            color: #cbd5e1;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+
+        /* Visual V-Model Triangle Diagram */
+        .vmodel-diagram {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 1.2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            padding-top: 1.2rem;
+        }
+
+        .v-phase {
+            background: rgba(7, 11, 20, 0.6);
+            border: 1px solid var(--glass-border);
+            border-radius: 10px;
+            padding: 1rem;
+            position: relative;
+        }
+
+        .v-phase.completed {
+            border-color: var(--accent);
+            background: rgba(52, 211, 153, 0.08);
+        }
+
+        .v-phase.active-stage {
+            border-color: var(--primary);
+            background: rgba(56, 189, 248, 0.1);
+            box-shadow: 0 0 15px rgba(56, 189, 248, 0.2);
+        }
+
+        .phase-status {
+            font-size: 0.72rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            margin-bottom: 0.3rem;
+            display: block;
+        }
+
+        .completed .phase-status { color: var(--accent); }
+        .active-stage .phase-status { color: var(--primary); }
+
+        .phase-title {
+            color: #fff;
+            font-size: 0.92rem;
+            font-weight: 600;
+            margin-bottom: 0.3rem;
+        }
+
+        .phase-meta {
+            color: var(--text-muted);
+            font-size: 0.8rem;
+        }
+
+        /* Showcase Cards */
         .showcase-grid {
             display: flex;
             flex-direction: column;
-            gap: 2rem;
+            gap: 2.2rem;
             margin: 2rem 0;
         }
 
@@ -330,7 +423,7 @@
 
         .showcase-video {
             width: 100%;
-            max-height: 440px;
+            max-height: 460px;
             object-fit: contain;
             background: #000;
             border: none;
@@ -385,7 +478,7 @@
             line-height: 1.7;
         }
 
-        /* Toast */
+        /* Toast Alert */
         #toast {
             visibility: hidden;
             min-width: 220px;
@@ -418,7 +511,7 @@
         <header>
             <h1>Norah Nader Alhussain</h1>
             <div class="subtitle">Internet of Things (IoT) & Systems Architecture</div>
-            <p class="bio">B.Sc. in IoT | Specializing in Embedded Firmware (ESP-IDF), Custom PCB Layout, Low-Latency Telemetry, and Cyber-Physical Systems.</p>
+            <p class="bio">B.Sc. in IoT | Embedded Firmware (ESP-IDF), Custom Multi-Layer PCB Design, Multi-Protocol Telemetry, and Cyber-Physical Systems.</p>
             <div class="links">
                 <a class="btn" href="https://github.com/norah-135" target="_blank">GitHub</a>
                 <a class="btn" href="https://www.linkedin.com/in/norah-alhussain-39b055346" target="_blank">LinkedIn</a>
@@ -431,11 +524,12 @@
             <div class="section-title">Technical Projects & System Architecture</div>
             <div class="projects-grid">
                 
-                <!-- Project 1: AeroMedic -->
+                <!-- Project 1: AeroMedic (Medical Hybrid VTOL Drone Cover) -->
                 <div class="project-card" onclick="openModal('modal-aeromedic')">
                     <div class="project-img-wrapper">
-                        <img class="project-img" src="https://images.unsplash.com/photo-1508614589041-895b88991e3e?auto=format&fit=crop&w=1200&q=80" alt="Medical VTOL Drone">
-                        <span class="overlay-badge">In Progress / MVP</span>
+                        <!-- صورة درون طبي هجين ذو أجنحة ثابتة ومراوح رفع عمودي (VTOL) -->
+                        <img class="project-img" src="https://images.unsplash.com/photo-1527977966376-1c8408f9f108?auto=format&fit=crop&w=1200&q=80" alt="Autonomous Medical Hybrid VTOL Drone">
+                        <span class="overlay-badge">Sprint 1 Delivered ✓</span>
                     </div>
                     <div class="project-body">
                         <div class="project-title">AeroMedic – Cyber-Physical Autonomous Emergency Ecosystem</div>
@@ -443,7 +537,7 @@
                             <ul>
                                 <li>Custom PCB routing in <strong>EasyEDA</strong> (ESP32, Semtech SX1262 LoRa, IMU/Optical) and 3D enclosure in <strong>Fusion 360</strong>.</li>
                                 <li>Low-power <strong>ESP-IDF (FreeRTOS)</strong> firmware broadcasting live vitals via connectionless <strong>BLE Beacon Mode (NimBLE)</strong>.</li>
-                                <li>Engineered a <strong>Flutter</strong> app integrated with <strong>MQTTS (EMQX Cloud)</strong> for low-latency emergency telemetry.</li>
+                                <li>Cross-platform <strong>Flutter</strong> telemetry hub streaming emergency payloads via <strong>MQTTS (EMQX Cloud)</strong>.</li>
                             </ul>
                         </div>
                         <div class="tags">
@@ -455,7 +549,7 @@
                             <span class="tag">Semtech LoRa</span>
                             <span class="tag">Flutter</span>
                         </div>
-                        <div class="click-hint">Click to inspect live demo, schematics & MQTT pipeline ↗</div>
+                        <div class="click-hint">Click to inspect Sprint 1 implementation & V-Model progress ↗</div>
                     </div>
                 </div>
 
@@ -521,82 +615,119 @@
     <div id="modal-aeromedic" class="modal">
         <div class="modal-content">
             <button class="close-btn" onclick="closeModal('modal-aeromedic')">&times;</button>
-            <h2 class="modal-title">AeroMedic: Deep Technical Architecture</h2>
+            <h2 class="modal-title">AeroMedic: Systems Engineering & Sprint 1 Highlights</h2>
             <div class="subtitle">Autonomous Cyber-Physical Emergency Telemetry Ecosystem</div>
 
+            <!-- بطاقة نموذج الـ V وموقع الإنجاز في الـ Agile Sprint 1 -->
+            <div class="vmodel-tracker-card">
+                <div class="vmodel-header">
+                    <div style="font-size: 1.15rem; font-weight: 700; color: #fff;">Agile Sprint 1: Implementation Base Completed</div>
+                    <span class="sprint-badge">V-Model Bottom Reached ✓</span>
+                </div>
+                <p class="vmodel-desc">
+                    تم الانتهاء بنجاح من متطلبات الهبوط في نموذج الـ <strong>V-Model</strong> وتنفيذ حزمة <strong>Agile Sprint 1 (Implementation Phase)</strong>. 
+                    شملت هذه المرحلة تثبيت المتطلبات التشغيلية (System Requirements & System Architecture)، وتصميم العتاد المخصص، واختبار طبقة النقل اللاسلكية بنجاح قبل الانتقال إلى مراحل التحقق والتكامل الميداني (Integration & Verification).
+                </p>
+
+                <div class="vmodel-diagram">
+                    <div class="v-phase completed">
+                        <span class="phase-status">✓ Completed</span>
+                        <div class="phase-title">1. Left Wing: Requirements</div>
+                        <div class="phase-meta">Biomedical constraints, fail-safe modes & RF specs defined.</div>
+                    </div>
+                    <div class="v-phase completed">
+                        <span class="phase-status">✓ Completed</span>
+                        <div class="phase-title">2. Architecture & Design</div>
+                        <div class="phase-meta">LoRa, BLE beaconing, and MQTTS protocol partitioning.</div>
+                    </div>
+                    <div class="v-phase active-stage">
+                        <span class="phase-status">⚡ Sprint 1 Delivered</span>
+                        <div class="phase-title">3. V-Model Base: Implementation</div>
+                        <div class="phase-meta">Custom PCB routing, 3D casing, and live Cloud Telemetry testing.</div>
+                    </div>
+                    <div class="v-phase">
+                        <span class="phase-status">⏳ Next Phase</span>
+                        <div class="phase-title">4. Right Wing: Verification</div>
+                        <div class="phase-meta">Field PX4 drone SITL flight verification & closed-loop tests.</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- قائمة مقتطفات ومخرجات Sprint 1 بالترتيب المطلوب بدقة -->
             <div class="showcase-grid">
 
-                <!-- 1. Live Video Demo: SOS Dispatch & MQTT Ingestion -->
+                <!-- 1. رندر الـ 3D PCB أولاً -->
                 <div class="showcase-card">
                     <div class="showcase-img-holder">
-                        <!-- ملف الفيديو الخاص بكِ: احفظي المقطع باسم mqtt_demo.mp4 بجانب index.html -->
-                        <video class="showcase-video" autoplay loop muted playsinline controls>
-                            <source src="mqtt_demo.mp4" type="video/mp4">
-                            Your browser does not support the video tag.
-                        </video>
+                        <img class="showcase-img" src="pcb_3d.png" alt="3D Physical Render of Wearable PCB" onerror="this.src='https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?auto=format&fit=crop&w=800&q=80'">
                     </div>
                     <div class="showcase-info">
-                        <span class="showcase-badge">Live System Execution</span>
-                        <h4>End-to-End Emergency Dispatch to MQTT Broker</h4>
+                        <span class="showcase-badge">3D Assembly Model</span>
+                        <h4>1. Assembled 3D PCB Physical Render</h4>
                         <p>
-                            Live demonstration showing the Flutter Hub interface triggering an instant SOS alert. 
-                            Upon activation, live telemetry packets (SpO2: 96%, HR: 82 BPM) are serialized and dispatched over secure WebSockets (WSS port 8084), reaching the MQTT broker and receiving a synchronous <strong>PublishAck</strong> confirmation in real-time.
+                            التحقق الفيزيائي ثلاثي الأبعاد من توزيع المكونات (ESP32-C3، شريحة SX1262 LoRa، والحساسات الضوئية) وضمان عدم وجود تداخلات ميكانيكية مع هيكل صندوق الطوارئ المحمول بالدرون وحزام الارتداء.
                         </p>
                     </div>
                 </div>
 
-                <!-- 2. MQTT Architecture Pipeline -->
-                <div class="showcase-card">
-                    <div class="showcase-img-holder">
-                        <img class="showcase-img" src="MQTT.png" alt="MQTT Protocol Architecture">
-                    </div>
-                    <div class="showcase-info">
-                        <span class="showcase-badge">Protocol Validation</span>
-                        <h4>MQTTS Cloud Telemetry & MQTTX Broker Pipeline</h4>
-                        <p>
-                            Hierarchical topic architecture (<code>aeromedic/emergency/alerts</code>) decoupling mobile telemetry from cloud storage. Validated under fluctuating network states using <strong>MQTTX</strong> for payload verification and QoS delivery checks.
-                        </p>
-                    </div>
-                </div>
-
-                <!-- 3. Circuit Schematic Design -->
-                <div class="showcase-card">
-                    <div class="showcase-img-holder">
-                        <img class="showcase-img" src="schematic.png" alt="Schematic Diagram in EasyEDA" onerror="this.src='https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=800&q=80'">
-                    </div>
-                    <div class="showcase-info">
-                        <span class="showcase-badge">Schematic Layer</span>
-                        <h4>Complete Circuit Schematic (EasyEDA)</h4>
-                        <p>
-                            Architected electrical schematics integrating the <strong>ESP32-C3</strong>, <strong>Semtech SX1262 LoRa</strong> transceiver, <strong>MAX30102</strong> pulse oximeter, and <strong>ICM-42688-P</strong> 6-axis IMU with isolated power planes and ESD protection.
-                        </p>
-                    </div>
-                </div>
-
-                <!-- 4. 2D PCB Traces & Routing -->
+                <!-- 2. الـ 2D PCB Traces ثانياً -->
                 <div class="showcase-card">
                     <div class="showcase-img-holder">
                         <img class="showcase-img" src="pcb_2d.png" alt="2D PCB Traces and Routing" onerror="this.src='https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=800&q=80'">
                     </div>
                     <div class="showcase-info">
-                        <span class="showcase-badge">PCB Layout</span>
-                        <h4>2D Multi-Layer PCB Routing & Trace Isolation</h4>
+                        <span class="showcase-badge">PCB Layout & Routing</span>
+                        <h4>2. 2D Multi-Layer PCB Traces & Routing</h4>
                         <p>
-                            Routed multi-layer traces in <strong>EasyEDA</strong> with strict RF impedance matching for LoRa transmission, continuous ground pouring to minimize EMI, and compact component placement fitting wearable ergonomic contours.
+                            مسارات التوصيل ثنائية الأبعاد المنفذة على <strong>EasyEDA</strong>؛ تتضمن مطابقة المعاوقة لمسار هوائي الـ LoRa RF، وتفريغ المستويات الأرضية (Ground Pouring) لعزل الضجيج بين خطوط التردد اللاسلكي وحساسات النبض.
                         </p>
                     </div>
                 </div>
 
-                <!-- 5. 3D Physical Board Render -->
+                <!-- 3. صورة معمارية الـ MQTT Pipeline ثالثاً -->
                 <div class="showcase-card">
                     <div class="showcase-img-holder">
-                        <img class="showcase-img" src="pcb_3d.png" alt="3D Render of Wearable PCB" onerror="this.src='https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?auto=format&fit=crop&w=800&q=80'">
+                        <img class="showcase-img" src="MQTT.png" alt="MQTT Protocol Architecture">
                     </div>
                     <div class="showcase-info">
-                        <span class="showcase-badge">3D Assembly</span>
-                        <h4>Assembled 3D PCB Physical Render</h4>
+                        <span class="showcase-badge">Telemetry Topology</span>
+                        <h4>3. MQTTS Cloud Telemetry Pipeline (Architecture)</h4>
                         <p>
-                            Verified mechanical tolerances and clearance constraints before PCB fabrication, ensuring optimal alignment with the 3D-modeled drone payload bay and wrist-strap casing.
+                            المعمارية السحابية لبروتوكول الـ <strong>MQTTS</strong> وهيكلة مواضيع الطوارئ (<code>aeromedic/emergency/alerts</code>) التي تفصل تدفق بيانات المريض والـ GPS عن قواعد البيانات المركزية لضمان سرعة نقل لا تتعدى أجزاء من الثانية.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- 4. مقطع الفيديو (دعم صيغة MOV) رابعاً -->
+                <div class="showcase-card">
+                    <div class="showcase-img-holder">
+                        <!-- يدعم صيغة MOV من آيفون/ماك وصيغة MP4 معاً -->
+                        <video class="showcase-video" autoplay loop muted playsinline controls>
+                            <source src="mqtt_demo.MOV" type="video/quicktime">
+                            <source src="mqtt_demo.mov" type="video/quicktime">
+                            <source src="mqtt_demo.mp4" type="video/mp4">
+                            Your browser does not support playing this MOV video.
+                        </video>
+                    </div>
+                    <div class="showcase-info">
+                        <span class="showcase-badge">Live Execution</span>
+                        <h4>4. End-to-End Emergency Dispatch Execution (MOV Demo)</h4>
+                        <p>
+                            تسجيل حي لاختبار سبرنت 1: الضغط على زر الاستغاثة (SOS) من واجهة Flutter Hub، وتوليد حمولة JSON بالبيانات الحيوية الحقيقية (SpO2: 96% و HR: 82 BPM) واستقبالها فورياً في وسيط MQTT واستلام حزمة التأكيد (PublishAck).
+                        </p>
+                    </div>
+                </div>
+
+                <!-- 5. الـ Schematic Design خامساً وأخيراً -->
+                <div class="showcase-card">
+                    <div class="showcase-img-holder">
+                        <img class="showcase-img" src="schematic.png" alt="Schematic Diagram in EasyEDA" onerror="this.src='https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=800&q=80'">
+                    </div>
+                    <div class="showcase-info">
+                        <span class="showcase-badge">Electrical Schematic</span>
+                        <h4>5. Full Circuit Schematic Diagram (EasyEDA)</h4>
+                        <p>
+                            المخطط الكهربائي التخطيطي الكامل لتوزيع الطاقة وحماية المداخل والمخارج للمايكروكنترولر ESP32، دارات شحن البطارية ودوائر التحويل الرقمية للحساسات وواجهات I2C/SPI المخصصة.
                         </p>
                     </div>
                 </div>
@@ -653,7 +784,7 @@
             <div class="modal-section">
                 <h4>Distributed Architecture & Protocol Hardening</h4>
                 <ul>
-                    <li><strong>3-Tier Topology:</strong> Isolates concerns between an ESP32 audio-sensing node, Python NLP serial bridge (921,600 baud), and an Arduino R4 WiFi actuation hub.</li>
+                    <li><strong>3-Tier Topology:</strong> Strictly isolates concerns between an ESP32 audio-sensing node, Python NLP serial bridge (921,600 baud), and an Arduino R4 WiFi actuation hub.</li>
                     <li><strong>Deterministic FSM:</strong> 9-state state machine orchestrating OLED menus, DFPlayer audio soundscapes, and Tuya Smart Lighting.</li>
                     <li><strong>Cryptographic Cloud Requests:</strong> Communicates with Tuya OpenAPI via HTTPS/TLS using dynamically calculated HMAC-SHA256 request signatures.</li>
                     <li><strong>Anti-Replay Network Security:</strong> NTP-synchronized epoch timestamps enforce a ±5-second acceptance window on local JSON HTTP commands.</li>
@@ -678,7 +809,6 @@
             document.getElementById(id).style.display = "none";
             document.body.style.overflow = "auto";
             
-            // إيقاف تشغيل الفيديو عند إغلاق النافذة
             const videos = document.querySelectorAll('video');
             videos.forEach(v => v.pause());
         }
