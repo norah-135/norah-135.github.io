@@ -469,18 +469,41 @@
             <h2 class="modal-title">AeroMedic: Deep Technical Architecture</h2>
             <div class="subtitle">Autonomous Cyber-Physical Emergency Telemetry Ecosystem</div>
             
+            <!-- معرض الصور الرئيسي (عدلي أسماء الصور هنا) -->
             <div class="modal-gallery">
-                <img class="gallery-img" src="https://images.unsplash.com/photo-1508614589041-895b88991e3e?auto=format&fit=crop&w=500&q=80" alt="System Flow">
-                <img class="gallery-img" src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=500&q=80" alt="PCB Layout">
+                <!-- خانة صورة معمارية الـ MQTT -->
+                <img class="gallery-img" src="MQTT.png" alt="MQTT Architecture & Broker Testing" title="MQTT Telemetry Flow">
+                
+                <!-- خانة صورة الـ PCB (حطي اسم ملفك مكان pcb_layout.png) -->
+                <img class="gallery-img" src="pcb_layout.png" alt="EasyEDA Custom PCB" title="Custom Wearable PCB">
+                
+                <!-- خانة صورة الـ Schematic (حطي اسم ملفك مكان schematic.png) -->
+                <img class="gallery-img" src="schematic.png" alt="Circuit Schematic" title="Circuit Schematic Design">
+                
+                <!-- خانة صورة الـ 3D Enclosure (حطي اسم ملفك مكان fusion360.png) -->
+                <img class="gallery-img" src="fusion360.png" alt="Fusion 360 Payload" title="3D CAD Payload">
             </div>
 
+            <!-- تفاصيل معمارية الـ MQTT والاتصال -->
             <div class="modal-section">
-                <h4>System Layering & Hardware Co-Design</h4>
-                <p>Designed as a resilient fail-safe ecosystem adhering to Systems Engineering V-Model principles:</p>
+                <h4>IoT Telemetry & MQTT Protocol Validation</h4>
+                <p>
+                    Implemented a lightweight, publish-subscribe telemetry pipeline using the <strong>MQTT/MQTTS</strong> protocol. 
+                    The mobile application packages live vital signs and emergency GPS coordinates into structured JSON payloads, publishing them directly to designated emergency topics.
+                </p>
                 <ul>
-                    <li><strong>Physical Layer:</strong> Custom multi-layer wearable PCB designed in EasyEDA housing an ESP32-C3 MCU, Semtech SX1262 LoRa module, MAX30102 pulse oximeter, and ICM-42688-P 6-axis IMU. Smart payload delivery box modeled in Autodesk Fusion 360 with chemical oxygen thermal barriers.</li>
-                    <li><strong>Firmware & BLE:</strong> ESP-IDF (FreeRTOS) NimBLE stack configured for connectionless Non-Directed Advertising (Beacon Mode), eliminating user Bluetooth pairing steps.</li>
-                    <li><strong>Cloud & Dispatch Link:</strong> Cross-platform Flutter client publishing encrypted emergency triggers via MQTTS to an EMQX Cloud Broker with fallback LoRa gateway routing.</li>
+                    <li><strong>Broker & Ingestion:</strong> Connected and validated the end-to-end messaging pipeline from the mobile dispatch app to the cloud broker, using <strong>MQTTX</strong> for topic subscription testing and packet payload verification.</li>
+                    <li><strong>Topic Architecture:</strong> Structured hierarchical topics (e.g., <code>aeromedic/emergency/alerts</code>) ensuring sub-second latency telemetry streaming and decoupled system scaling.</li>
+                </ul>
+            </div>
+
+            <!-- تفاصيل العتاد والتصميم الفيزيائي -->
+            <div class="modal-section">
+                <h4>Hardware Co-Design & Embedded Firmware</h4>
+                <ul>
+                    <li><strong>Schematic & PCB Routing:</strong> Designed multi-layer circuit schematics and PCB in <strong>EasyEDA</strong> integrating the ESP32, Semtech SX1262 LoRa transceiver, MAX30102 pulse oximeter, and ICM-42688-P IMU.</li>
+                    <li><strong>Mechanical Enclosure:</strong> Modeled the aerodynamic payload delivery casing in <strong>Autodesk Fusion 360</strong>, incorporating thermal containment zones.</li>
+                    <li><strong>Firmware Layer:</strong> Developed <strong>ESP-IDF (FreeRTOS)</strong> firmware running connectionless <strong>BLE Beacon Mode (NimBLE)</strong> for zero-pairing patient vital broadcast.</li>
                 </ul>
             </div>
 
