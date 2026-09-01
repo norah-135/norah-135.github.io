@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Norah Alhussain | IoT & Systems Engineer</title>
+    <title>Norah Alhussain | IoT & Systems Architecture Engineer</title>
     <style>
         :root {
             --bg-base: #070b14;
@@ -73,7 +73,7 @@
 
         .bio {
             color: var(--text-muted);
-            max-width: 700px;
+            max-width: 720px;
             margin: 0 auto 1.5rem;
             font-size: 0.98rem;
         }
@@ -151,7 +151,7 @@
 
         .project-img-wrapper {
             width: 100%;
-            height: 330px;
+            height: 340px;
             position: relative;
             overflow: hidden;
             background: #090e1a;
@@ -291,12 +291,11 @@
         }
 
         /* ═══════════════════════════════════════
-           Sprint 1 & V-Model Status Tracker
+           Accurate V-Model Progress Architecture
            ═══════════════════════════════════════ */
         .vmodel-tracker-card {
             background: linear-gradient(145deg, rgba(16, 24, 40, 0.9), rgba(15, 23, 42, 0.7));
-            border: 1px solid var(--accent);
-            box-shadow: 0 0 25px var(--accent-glow);
+            border: 1px solid var(--glass-border);
             border-radius: 16px;
             padding: 1.8rem;
             margin: 1.8rem 0 2.5rem 0;
@@ -308,17 +307,17 @@
             align-items: center;
             flex-wrap: wrap;
             gap: 0.8rem;
-            margin-bottom: 1.2rem;
+            margin-bottom: 1rem;
         }
 
         .sprint-badge {
-            background: rgba(52, 211, 153, 0.15);
-            color: var(--accent);
-            border: 1px solid var(--accent);
+            background: rgba(56, 189, 248, 0.15);
+            color: var(--primary);
+            border: 1px solid var(--primary);
             padding: 0.35rem 0.9rem;
             border-radius: 20px;
             font-weight: 700;
-            font-size: 0.85rem;
+            font-size: 0.82rem;
             letter-spacing: 0.5px;
         }
 
@@ -329,56 +328,12 @@
             margin-bottom: 1.5rem;
         }
 
-        /* Visual V-Model Triangle Diagram */
-        .vmodel-diagram {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1rem;
-            margin-top: 1.2rem;
-            border-top: 1px solid rgba(255, 255, 255, 0.08);
-            padding-top: 1.2rem;
-        }
-
-        .v-phase {
-            background: rgba(7, 11, 20, 0.6);
-            border: 1px solid var(--glass-border);
-            border-radius: 10px;
-            padding: 1rem;
-            position: relative;
-        }
-
-        .v-phase.completed {
-            border-color: var(--accent);
-            background: rgba(52, 211, 153, 0.08);
-        }
-
-        .v-phase.active-stage {
-            border-color: var(--primary);
-            background: rgba(56, 189, 248, 0.1);
-            box-shadow: 0 0 15px rgba(56, 189, 248, 0.2);
-        }
-
-        .phase-status {
-            font-size: 0.72rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            margin-bottom: 0.3rem;
-            display: block;
-        }
-
-        .completed .phase-status { color: var(--accent); }
-        .active-stage .phase-status { color: var(--primary); }
-
-        .phase-title {
-            color: #fff;
-            font-size: 0.92rem;
-            font-weight: 600;
-            margin-bottom: 0.3rem;
-        }
-
-        .phase-meta {
-            color: var(--text-muted);
-            font-size: 0.8rem;
+        .vmodel-svg-container {
+            width: 100%;
+            background: rgba(7, 11, 20, 0.7);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 12px;
+            padding: 1.2rem;
         }
 
         /* Showcase Cards */
@@ -411,7 +366,7 @@
 
         .showcase-img {
             width: 100%;
-            max-height: 420px;
+            max-height: 440px;
             object-fit: contain;
             padding: 1rem;
             transition: transform 0.3s ease;
@@ -423,7 +378,7 @@
 
         .showcase-video {
             width: 100%;
-            max-height: 460px;
+            max-height: 480px;
             object-fit: contain;
             background: #000;
             border: none;
@@ -511,7 +466,7 @@
         <header>
             <h1>Norah Nader Alhussain</h1>
             <div class="subtitle">Internet of Things (IoT) & Systems Architecture</div>
-            <p class="bio">B.Sc. in IoT | Embedded Firmware (ESP-IDF), Custom Multi-Layer PCB Design, Multi-Protocol Telemetry, and Cyber-Physical Systems.</p>
+            <p class="bio">B.Sc. in IoT | Embedded Firmware (ESP-IDF/FreeRTOS), Custom Multi-Layer PCB Routing, Real-Time Low-Latency Telemetry, and Cyber-Physical Systems Architecture.</p>
             <div class="links">
                 <a class="btn" href="https://github.com/norah-135" target="_blank">GitHub</a>
                 <a class="btn" href="https://www.linkedin.com/in/norah-alhussain-39b055346" target="_blank">LinkedIn</a>
@@ -527,21 +482,21 @@
                 <!-- Project 1: AeroMedic (Medical Hybrid VTOL Drone Cover) -->
                 <div class="project-card" onclick="openModal('modal-aeromedic')">
                     <div class="project-img-wrapper">
-                        <!-- صورة درون طبي هجين ذو أجنحة ثابتة ومراوح رفع عمودي (VTOL) -->
-                        <img class="project-img" src="https://images.unsplash.com/photo-1527977966376-1c8408f9f108?auto=format&fit=crop&w=1200&q=80" alt="Autonomous Medical Hybrid VTOL Drone">
-                        <span class="overlay-badge">Sprint 1 Delivered ✓</span>
+                        <!-- High-definition Medical Hybrid VTOL Drone (Fixed-Wing + Vertical Lift Quadrotors) -->
+                        <img class="project-img" src="https://images.unsplash.com/photo-1508614589041-895b88991e3e?auto=format&fit=crop&w=1200&q=80" alt="Autonomous Medical Hybrid VTOL Drone">
+                        <span class="overlay-badge">Sprint 1 Baseline Active</span>
                     </div>
                     <div class="project-body">
                         <div class="project-title">AeroMedic – Cyber-Physical Autonomous Emergency Ecosystem</div>
                         <div class="project-desc">
                             <ul>
-                                <li>Custom PCB routing in <strong>EasyEDA</strong> (ESP32, Semtech SX1262 LoRa, IMU/Optical) and 3D enclosure in <strong>Fusion 360</strong>.</li>
-                                <li>Low-power <strong>ESP-IDF (FreeRTOS)</strong> firmware broadcasting live vitals via connectionless <strong>BLE Beacon Mode (NimBLE)</strong>.</li>
-                                <li>Cross-platform <strong>Flutter</strong> telemetry hub streaming emergency payloads via <strong>MQTTS (EMQX Cloud)</strong>.</li>
+                                <li>Custom sensor PCB routing in <strong>EasyEDA</strong> (ESP32-C3, Semtech SX1262 LoRa, IMU/Biometrics) with payload casing modeled in <strong>Fusion 360</strong>.</li>
+                                <li>Low-power <strong>ESP-IDF (FreeRTOS)</strong> firmware broadcasting live patient vitals via connectionless <strong>BLE Beacon Mode (NimBLE)</strong>.</li>
+                                <li>Cross-platform <strong>Flutter</strong> hub streaming emergency telemetry to <strong>MQTTS (EMQX Cloud)</strong> for low-latency emergency dispatch.</li>
                             </ul>
                         </div>
                         <div class="tags">
-                            <span class="tag">Medical VTOL</span>
+                            <span class="tag">Hybrid VTOL</span>
                             <span class="tag">ESP-IDF</span>
                             <span class="tag">EasyEDA PCB</span>
                             <span class="tag">Fusion 360</span>
@@ -549,7 +504,7 @@
                             <span class="tag">Semtech LoRa</span>
                             <span class="tag">Flutter</span>
                         </div>
-                        <div class="click-hint">Click to inspect Sprint 1 implementation & V-Model progress ↗</div>
+                        <div class="click-hint">Click to inspect Sprint 1 implementation & Systems Engineering V-Model ↗</div>
                     </div>
                 </div>
 
@@ -618,90 +573,103 @@
             <h2 class="modal-title">AeroMedic: Systems Engineering & Sprint 1 Highlights</h2>
             <div class="subtitle">Autonomous Cyber-Physical Emergency Telemetry Ecosystem</div>
 
-            <!-- بطاقة نموذج الـ V وموقع الإنجاز في الـ Agile Sprint 1 -->
+            <!-- V-Model Progress Tracker -->
             <div class="vmodel-tracker-card">
                 <div class="vmodel-header">
-                    <div style="font-size: 1.15rem; font-weight: 700; color: #fff;">Agile Sprint 1: Implementation Base Completed</div>
-                    <span class="sprint-badge">V-Model Bottom Reached ✓</span>
+                    <div style="font-size: 1.15rem; font-weight: 700; color: #fff;">V-Model Lifecycle: Agile Sprint 1 Base Reached</div>
+                    <span class="sprint-badge">Bottom of the V: Implementation Baseline</span>
                 </div>
                 <p class="vmodel-desc">
-                    تم الانتهاء بنجاح من متطلبات الهبوط في نموذج الـ <strong>V-Model</strong> وتنفيذ حزمة <strong>Agile Sprint 1 (Implementation Phase)</strong>. 
-                    شملت هذه المرحلة تثبيت المتطلبات التشغيلية (System Requirements & System Architecture)، وتصميم العتاد المخصص، واختبار طبقة النقل اللاسلكية بنجاح قبل الانتقال إلى مراحل التحقق والتكامل الميداني (Integration & Verification).
+                    Following standard Systems Engineering V-Model principles, the top-down decomposition on the left wing (System Requirements Analysis and Architecture Design) has concluded. We have reached the bottom slope of the V with <strong>Agile Sprint 1</strong>, delivering the core hardware baseline (schematic, wearable PCB design, and verified cloud telemetry pipeline). The subsequent sprints will expand hardware-in-the-loop firmware before ascending the right wing for SITL drone integration and field validation.
                 </p>
 
-                <div class="vmodel-diagram">
-                    <div class="v-phase completed">
-                        <span class="phase-status">✓ Completed</span>
-                        <div class="phase-title">1. Left Wing: Requirements</div>
-                        <div class="phase-meta">Biomedical constraints, fail-safe modes & RF specs defined.</div>
-                    </div>
-                    <div class="v-phase completed">
-                        <span class="phase-status">✓ Completed</span>
-                        <div class="phase-title">2. Architecture & Design</div>
-                        <div class="phase-meta">LoRa, BLE beaconing, and MQTTS protocol partitioning.</div>
-                    </div>
-                    <div class="v-phase active-stage">
-                        <span class="phase-status">⚡ Sprint 1 Delivered</span>
-                        <div class="phase-title">3. V-Model Base: Implementation</div>
-                        <div class="phase-meta">Custom PCB routing, 3D casing, and live Cloud Telemetry testing.</div>
-                    </div>
-                    <div class="v-phase">
-                        <span class="phase-status">⏳ Next Phase</span>
-                        <div class="phase-title">4. Right Wing: Verification</div>
-                        <div class="phase-meta">Field PX4 drone SITL flight verification & closed-loop tests.</div>
-                    </div>
+                <!-- Precise Structural SVG Diagram -->
+                <div class="vmodel-svg-container">
+                    <svg viewBox="0 0 820 220" width="100%" height="auto" xmlns="http://www.w3.org/2000/svg">
+                        <!-- Left Wing (Decomposition / Completed) -->
+                        <line x1="120" y1="40" x2="260" y2="100" stroke="#34d399" stroke-width="3" stroke-dasharray="0" />
+                        <line x1="260" y1="100" x2="410" y2="175" stroke="#34d399" stroke-width="3" stroke-dasharray="0" />
+                        
+                        <!-- Right Wing (Verification / Upcoming) -->
+                        <line x1="410" y1="175" x2="560" y2="100" stroke="#475569" stroke-width="2.5" stroke-dasharray="5,5" />
+                        <line x1="560" y1="100" x2="700" y2="40" stroke="#475569" stroke-width="2.5" stroke-dasharray="5,5" />
+
+                        <!-- Node 1: Concept & Req (Completed) -->
+                        <circle cx="120" cy="40" r="8" fill="#34d399" />
+                        <text x="120" y="22" fill="#34d399" font-size="11" font-weight="700" text-anchor="middle">1. Concept & Req</text>
+                        <text x="120" y="60" fill="#94a3b8" font-size="10" text-anchor="middle">Validated ✓</text>
+
+                        <!-- Node 2: System Architecture (Completed) -->
+                        <circle cx="260" cy="100" r="8" fill="#34d399" />
+                        <text x="260" y="82" fill="#34d399" font-size="11" font-weight="700" text-anchor="middle">2. System Architecture</text>
+                        <text x="260" y="120" fill="#94a3b8" font-size="10" text-anchor="middle">Decoupled Stack ✓</text>
+
+                        <!-- Node 3: Bottom of the V (Current: Sprint 1 MVP Baseline) -->
+                        <circle cx="410" cy="175" r="11" fill="#38bdf8" stroke="#ffffff" stroke-width="2" />
+                        <text x="410" y="202" fill="#38bdf8" font-size="12" font-weight="800" text-anchor="middle">CURRENT: Sprint 1 Implementation</text>
+                        <text x="410" y="217" fill="#cbd5e1" font-size="10" text-anchor="middle">PCB + Telemetry MVP Delivered</text>
+
+                        <!-- Node 4: Integration & SITL (Upcoming) -->
+                        <circle cx="560" cy="100" r="8" fill="#1e293b" stroke="#64748b" stroke-width="2" />
+                        <text x="560" y="82" fill="#94a3b8" font-size="11" font-weight="700" text-anchor="middle">4. Integration & SITL</text>
+                        <text x="560" y="120" fill="#64748b" font-size="10" text-anchor="middle">In Sprints 2 & 3</text>
+
+                        <!-- Node 5: Field Verification (Upcoming) -->
+                        <circle cx="700" cy="40" r="8" fill="#1e293b" stroke="#64748b" stroke-width="2" />
+                        <text x="700" y="22" fill="#94a3b8" font-size="11" font-weight="700" text-anchor="middle">5. System Acceptance</text>
+                        <text x="700" y="60" fill="#64748b" font-size="10" text-anchor="middle">Future Runway</text>
+                    </svg>
                 </div>
             </div>
 
-            <!-- قائمة مقتطفات ومخرجات Sprint 1 بالترتيب المطلوب بدقة -->
+            <!-- Sprint 1 Deliverables (Ordered strictly: 3D -> 2D -> MQTT -> Video -> Schematic) -->
             <div class="showcase-grid">
 
-                <!-- 1. رندر الـ 3D PCB أولاً -->
+                <!-- 1. 3D Physical Board Render -->
                 <div class="showcase-card">
                     <div class="showcase-img-holder">
                         <img class="showcase-img" src="pcb_3d.png" alt="3D Physical Render of Wearable PCB" onerror="this.src='https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?auto=format&fit=crop&w=800&q=80'">
                     </div>
                     <div class="showcase-info">
-                        <span class="showcase-badge">3D Assembly Model</span>
-                        <h4>1. Assembled 3D PCB Physical Render</h4>
+                        <span class="showcase-badge">1. 3D Assembly Model</span>
+                        <h4>Assembled 3D PCB Physical Render</h4>
                         <p>
-                            التحقق الفيزيائي ثلاثي الأبعاد من توزيع المكونات (ESP32-C3، شريحة SX1262 LoRa، والحساسات الضوئية) وضمان عدم وجود تداخلات ميكانيكية مع هيكل صندوق الطوارئ المحمول بالدرون وحزام الارتداء.
+                            Physical clearance and mechanical collision inspection for the custom wearable PCB. Confirmed component heights (ESP32-C3, Semtech SX1262 LoRa module, and optical PPG sensors) to guarantee perfect fitment within the drone payload dispatch bay and the wrist strap.
                         </p>
                     </div>
                 </div>
 
-                <!-- 2. الـ 2D PCB Traces ثانياً -->
+                <!-- 2. 2D PCB Traces & Routing -->
                 <div class="showcase-card">
                     <div class="showcase-img-holder">
                         <img class="showcase-img" src="pcb_2d.png" alt="2D PCB Traces and Routing" onerror="this.src='https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=800&q=80'">
                     </div>
                     <div class="showcase-info">
-                        <span class="showcase-badge">PCB Layout & Routing</span>
-                        <h4>2. 2D Multi-Layer PCB Traces & Routing</h4>
+                        <span class="showcase-badge">2. PCB Layout & Routing</span>
+                        <h4>2D Multi-Layer PCB Traces & Routing</h4>
                         <p>
-                            مسارات التوصيل ثنائية الأبعاد المنفذة على <strong>EasyEDA</strong>؛ تتضمن مطابقة المعاوقة لمسار هوائي الـ LoRa RF، وتفريغ المستويات الأرضية (Ground Pouring) لعزل الضجيج بين خطوط التردد اللاسلكي وحساسات النبض.
+                            Multi-layer routing routed in <strong>EasyEDA</strong>. Implemented $50\Omega$ controlled impedance matching on the LoRa RF transmission trace, dedicated star-grounding to isolate digital noise from sensitive bio-sensors, and ground plane pouring for EMI suppression.
                         </p>
                     </div>
                 </div>
 
-                <!-- 3. صورة معمارية الـ MQTT Pipeline ثالثاً -->
+                <!-- 3. MQTT Telemetry Architecture Diagram -->
                 <div class="showcase-card">
                     <div class="showcase-img-holder">
                         <img class="showcase-img" src="MQTT.png" alt="MQTT Protocol Architecture">
                     </div>
                     <div class="showcase-info">
-                        <span class="showcase-badge">Telemetry Topology</span>
-                        <h4>3. MQTTS Cloud Telemetry Pipeline (Architecture)</h4>
+                        <span class="showcase-badge">3. Telemetry Topology</span>
+                        <h4>MQTTS Cloud Telemetry Pipeline Architecture</h4>
                         <p>
-                            المعمارية السحابية لبروتوكول الـ <strong>MQTTS</strong> وهيكلة مواضيع الطوارئ (<code>aeromedic/emergency/alerts</code>) التي تفصل تدفق بيانات المريض والـ GPS عن قواعد البيانات المركزية لضمان سرعة نقل لا تتعدى أجزاء من الثانية.
+                            Low-latency, publish-subscribe telemetry architecture decoupling the local wearable node and mobile dispatch application from backend infrastructure. Hierarchical topic tree (<code>aeromedic/emergency/alerts</code>) engineered for high-concurrency emergency routing under sub-second latency.
                         </p>
                     </div>
                 </div>
 
-                <!-- 4. مقطع الفيديو (دعم صيغة MOV) رابعاً -->
+                <!-- 4. Live MOV Video Execution -->
                 <div class="showcase-card">
                     <div class="showcase-img-holder">
-                        <!-- يدعم صيغة MOV من آيفون/ماك وصيغة MP4 معاً -->
                         <video class="showcase-video" autoplay loop muted playsinline controls>
                             <source src="mqtt_demo.MOV" type="video/quicktime">
                             <source src="mqtt_demo.mov" type="video/quicktime">
@@ -710,24 +678,24 @@
                         </video>
                     </div>
                     <div class="showcase-info">
-                        <span class="showcase-badge">Live Execution</span>
-                        <h4>4. End-to-End Emergency Dispatch Execution (MOV Demo)</h4>
+                        <span class="showcase-badge">4. Live System Execution</span>
+                        <h4>End-to-End Emergency Dispatch Execution (MOV Demo)</h4>
                         <p>
-                            تسجيل حي لاختبار سبرنت 1: الضغط على زر الاستغاثة (SOS) من واجهة Flutter Hub، وتوليد حمولة JSON بالبيانات الحيوية الحقيقية (SpO2: 96% و HR: 82 BPM) واستقبالها فورياً في وسيط MQTT واستلام حزمة التأكيد (PublishAck).
+                            Real-time validation of Sprint 1: Actuating the SOS button on the Flutter Hub triggers immediate payload construction containing live biomedical metrics (SpO2: 96%, HR: 82 BPM). Telemetry is securely transported via WebSockets (WSS port 8084) to the cloud broker, instantaneously confirmed by a synchronous <strong>PublishAck</strong> packet.
                         </p>
                     </div>
                 </div>
 
-                <!-- 5. الـ Schematic Design خامساً وأخيراً -->
+                <!-- 5. Electrical Circuit Schematic -->
                 <div class="showcase-card">
                     <div class="showcase-img-holder">
                         <img class="showcase-img" src="schematic.png" alt="Schematic Diagram in EasyEDA" onerror="this.src='https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=800&q=80'">
                     </div>
                     <div class="showcase-info">
-                        <span class="showcase-badge">Electrical Schematic</span>
-                        <h4>5. Full Circuit Schematic Diagram (EasyEDA)</h4>
+                        <span class="showcase-badge">5. Electrical Schematic</span>
+                        <h4>Full Circuit Schematic Diagram (EasyEDA)</h4>
                         <p>
-                            المخطط الكهربائي التخطيطي الكامل لتوزيع الطاقة وحماية المداخل والمخارج للمايكروكنترولر ESP32، دارات شحن البطارية ودوائر التحويل الرقمية للحساسات وواجهات I2C/SPI المخصصة.
+                            Complete circuit design detailing power regulation rails (LDO 3.3V), lithium battery charging and protection sub-circuits, decoupled I2C communication buses for the ICM-42688-P IMU and MAX30102 oximeter, and SPI connections to the SX1262 LoRa transceiver.
                         </p>
                     </div>
                 </div>
@@ -737,9 +705,9 @@
             <div class="modal-section">
                 <h4>System Architecture & Embedded Firmware</h4>
                 <ul>
-                    <li><strong>Autonomous Delivery Drone:</strong> Integrated hybrid VTOL drone dynamics with localized failsafe flight controls for desert terrain medical deliveries.</li>
-                    <li><strong>Firmware & BLE Beacon:</strong> Programmed the ESP32 in <strong>ESP-IDF (FreeRTOS)</strong> using <strong>NimBLE</strong> in non-directed beacon advertising mode for zero-pairing patient vital broadcast.</li>
-                    <li><strong>Dispatch Hub:</strong> Cross-platform <strong>Flutter (Dart)</strong> interface linked to <strong>Firebase</strong> for live GPS tracking and real-time alert visualization.</li>
+                    <li><strong>Autonomous Delivery Drone:</strong> Medical hybrid VTOL platform integrating fixed-wing aerodynamic cruise with localized multirotor vertical takeoff and landing for long-range desert delivery.</li>
+                    <li><strong>Firmware & BLE Beacon:</strong> ESP32 programmed in <strong>ESP-IDF (FreeRTOS)</strong> leveraging <strong>NimBLE</strong> in non-directed beacon advertising mode for zero-pairing patient vital broadcast.</li>
+                    <li><strong>Dispatch Hub:</strong> Cross-platform <strong>Flutter (Dart)</strong> application integrated with <strong>Firebase</strong> for persistent fleet management and emergency alert dispatch.</li>
                 </ul>
             </div>
 
@@ -784,10 +752,10 @@
             <div class="modal-section">
                 <h4>Distributed Architecture & Protocol Hardening</h4>
                 <ul>
-                    <li><strong>3-Tier Topology:</strong> Strictly isolates concerns between an ESP32 audio-sensing node, Python NLP serial bridge (921,600 baud), and an Arduino R4 WiFi actuation hub.</li>
+                    <li><strong>3-Tier Topology:</strong> Isolates concerns between an ESP32 audio-sensing node, Python NLP serial bridge ($921.6\text{k baud}$), and an Arduino R4 WiFi actuation hub.</li>
                     <li><strong>Deterministic FSM:</strong> 9-state state machine orchestrating OLED menus, DFPlayer audio soundscapes, and Tuya Smart Lighting.</li>
                     <li><strong>Cryptographic Cloud Requests:</strong> Communicates with Tuya OpenAPI via HTTPS/TLS using dynamically calculated HMAC-SHA256 request signatures.</li>
-                    <li><strong>Anti-Replay Network Security:</strong> NTP-synchronized epoch timestamps enforce a ±5-second acceptance window on local JSON HTTP commands.</li>
+                    <li><strong>Anti-Replay Network Security:</strong> NTP-synchronized epoch timestamps enforce a $\le 5\text{s}$ acceptance window on local JSON HTTP commands.</li>
                     <li><strong>Zero-Config Discovery:</strong> Local mDNS (<code>noura-hub.local</code>) resolves dynamically across nodes without fixed IP addresses.</li>
                 </ul>
             </div>
