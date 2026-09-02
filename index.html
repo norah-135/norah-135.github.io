@@ -534,9 +534,9 @@
                         <div class="project-title">HeadTrack-Mouse – Multimodal Assistive HCI</div>
                         <div class="project-desc">
                             <ul>
-                                <li>Fused <strong>MediaPipe Face Mesh (60 FPS)</strong> with an <strong>Arduino + MPU-6050</strong> for decoupled XY-axis cursor tracking (<10ms latency).</li>
-                                <li>Deployed an <strong>ESP32</strong> with an <strong>I2S mic (INMP441)</strong> using VAD for hands-free screen boundary locking.</li>
-                                <li>Built a <strong>PyQt6</strong> dashboard with <strong>Selenium</strong> automation and a custom AI-driven <strong>Smart Study Assistant</strong>.</li>
+                                <li>Fused <strong>MediaPipe Face Mesh (60 FPS)</strong> with an <strong>Arduino + MPU-6050</strong> for decoupled XY-axis cursor tracking (<10ms latency)[cite: 1].</li>
+                                <li>Deployed an <strong>ESP32</strong> with an <strong>I2S mic (INMP441)</strong> using VAD for hands-free screen boundary locking[cite: 1].</li>
+                                <li>Built a <strong>PyQt6</strong> dashboard with <strong>Selenium</strong> automation and a custom AI-driven <strong>Smart Study Assistant</strong>[cite: 1].</li>
                             </ul>
                         </div>
                         <div class="tags">
@@ -551,10 +551,12 @@
                     </div>
                 </div>
 
-                <!-- Project 3: Hujou3 -->
+                <!-- Project 3: Hujou3 (Ambient Light & Audio IoT Hub Cover) -->
                 <div class="project-card" onclick="openModal('modal-hujou3')">
                     <div class="project-img-wrapper">
-                        <img class="project-img" src="H.png" alt="Hujou3 Distributed Ambient Hub" onerror="this.onerror=null; this.src='H.jpg';">
+                        <img class="project-img" 
+                             src="https://images.unsplash.com/photo-1558002038-1055907df827?auto=format&fit=crop&w=1200&q=80" 
+                             alt="Smart Ambient Lighting & Audio Controller Hub">
                         <span class="overlay-badge">Distributed IoT</span>
                     </div>
                     <div class="project-body">
@@ -830,13 +832,13 @@
             <div class="modal-section">
                 <h4>System Overview & Decoupled Architecture</h4>
                 <p>
-                    Designed to eliminate fine motor control barriers for users with physical mobility challenges, carpal tunnel syndrome, or RSI. 
-                    Unlike traditional single-sensor eye/face trackers that cause rapid muscle fatigue, this system decouples control axes across three distinct hardware and software modalities to achieve <strong>sub-10ms latency</strong> and millimeter cursor precision:
+                    Designed to eliminate fine motor control barriers for users with physical mobility challenges, carpal tunnel syndrome, or RSI[cite: 1]. 
+                    Unlike traditional single-sensor eye/face trackers that cause rapid muscle fatigue, this system decouples control axes across three distinct hardware and software modalities to achieve <strong>sub-10ms latency</strong> and millimeter cursor precision[cite: 1]:
                 </p>
                 <ul>
-                    <li><strong>Horizontal X-Axis Control:</strong> MediaPipe Face Mesh tracking 478 3D landmarks at 60 FPS to detect natural horizontal head rotation. Includes precision Slow Mode (25% speed via lip-purse gesture) and mouth-pull gestures for left/right clicks.</li>
-                    <li><strong>Vertical Y-Axis Control:</strong> An Arduino Uno R4 WiFi processes 6-axis MPU-6050 accelerometer and gyroscope data at 100 Hz, mapping vertical head pitch through exponential acceleration curves and adaptive smoothing algorithms.</li>
-                    <li><strong>Edge Voice Lock Zones:</strong> An ESP32 connected to an INMP441 I2S digital microphone runs Voice Activity Detection (VAD) streaming audio over high-speed serial. Commands ("up", "down", "release") instantly anchor the cursor to top/bottom 5% screen boundaries without physical neck craning.</li>
+                    <li><strong>Horizontal X-Axis Control:</strong> MediaPipe Face Mesh tracking 478 3D landmarks at 60 FPS to detect natural horizontal head rotation[cite: 1]. Includes precision Slow Mode (25% speed via lip-purse gesture) and mouth-pull gestures for left/right clicks[cite: 1].</li>
+                    <li><strong>Vertical Y-Axis Control:</strong> An Arduino Uno R4 WiFi processes 6-axis MPU-6050 accelerometer and gyroscope data at 100 Hz, mapping vertical head pitch through exponential acceleration curves and adaptive smoothing algorithms[cite: 1].</li>
+                    <li><strong>Edge Voice Lock Zones:</strong> An ESP32 connected to an INMP441 I2S digital microphone runs Voice Activity Detection (VAD) streaming audio over high-speed serial[cite: 1]. Commands ("up", "down", "release") instantly anchor the cursor to top/bottom 5% screen boundaries without physical neck craning[cite: 1].</li>
                 </ul>
             </div>
 
@@ -861,8 +863,8 @@
                         <span class="showcase-badge">Live System Execution</span>
                         <h4>Hands-Free Multimodal Interaction in Action</h4>
                         <p>
-                            Live execution recording demonstrating decoupled cursor tracking driven by MediaPipe facial landmark rotation and MPU-6050 vertical head pitch. 
-                            Shows real-time activation of the 25% precision Slow Mode and instantaneous screen boundary locking via ESP32 I2S voice commands.
+                            Live execution recording demonstrating decoupled cursor tracking driven by MediaPipe facial landmark rotation and MPU-6050 vertical head pitch[cite: 1]. 
+                            Shows real-time activation of the 25% precision Slow Mode and instantaneous screen boundary locking via ESP32 I2S voice commands[cite: 1].
                         </p>
                     </div>
                 </div>
@@ -879,8 +881,8 @@
                         <span class="showcase-badge">PyQt6 Control Panel</span>
                         <h4>Automated University Workflow & Split-Screen Dock</h4>
                         <p>
-                            A compact, hands-free management hub built with <strong>PyQt6</strong> and <strong>Selenium WebDriver</strong>. 
-                            Automates single-click Blackboard LMS authentication to bypass manual logins, launches voice-activated Gemini AI sessions, and automatically snaps application windows into an ergonomic 30/70 split-screen workspace for hands-free study productivity.
+                            A compact, hands-free management hub built with <strong>PyQt6</strong> and <strong>Selenium WebDriver</strong>[cite: 1]. 
+                            Automates single-click Blackboard LMS authentication to bypass manual logins, launches voice-activated Gemini AI sessions, and automatically snaps application windows into an ergonomic 30/70 split-screen workspace for hands-free study productivity[cite: 1].
                         </p>
                     </div>
                 </div>
@@ -897,8 +899,8 @@
                         <span class="showcase-badge">AI Study Assistant</span>
                         <h4>Integrated Lecture Ingestion & Interactive Self-Testing</h4>
                         <p>
-                            Custom web platform engineered to eliminate high cognitive loads and repetitive switching between browser tabs. 
-                            Allows students to drag-and-drop lecture slides (PDF, PPTX, DOCX) to automatically generate concise summaries, extract core concepts, and produce interactive practice exam questions with self-grading capabilities.
+                            Custom web platform engineered to eliminate high cognitive loads and repetitive switching between browser tabs[cite: 1]. 
+                            Allows students to drag-and-drop lecture slides (PDF, PPTX, DOCX) to automatically generate concise summaries, extract core concepts, and produce interactive practice exam questions with self-grading capabilities[cite: 1].
                         </p>
                     </div>
                 </div>
@@ -908,7 +910,7 @@
             <!-- Behind the Code -->
             <div class="modal-section" style="border-top: 1px solid rgba(255,255,255,0.08); padding-top: 1.5rem; text-align: center;">
                 <p style="font-style: italic; color: var(--text-muted); max-width: 700px; margin: 0 auto;">
-                    "This project was just a few touches away from being more perfect, but I realized that development is a never-ending process. Recognizing the 'Perfectionism Trap,' I decided to release it anyway. Special thanks to coffee cups :)"
+                    "This project was just a few touches away from being more perfect, but I realized that development is a never-ending process. Recognizing the 'Perfectionism Trap,' I decided to release it anyway. Special thanks to coffee cups :)"[cite: 1]
                 </p>
             </div>
 
