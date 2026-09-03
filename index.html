@@ -487,7 +487,7 @@
         <header>
             <h1>Norah Nader Alhussain</h1>
             <div class="subtitle">Internet of Things (IoT) & Systems Architecture</div>
-            <p class="bio">B.Sc. in IoT | Embedded Firmware (ESP-IDF/FreeRTOS),Real-Time Low-Latency Telemetry, and Cyber-Physical Systems Architecture.</p>
+            <p class="bio">B.Sc. in IoT | Embedded Firmware (ESP-IDF/FreeRTOS), Real-Time Low-Latency Telemetry, and Cyber-Physical Systems Architecture.</p>
             <div class="links">
                 <a class="btn" href="https://github.com/norah-135" target="_blank">GitHub</a>
                 <a class="btn" href="https://www.linkedin.com/in/norah-alhussain-39b055346" target="_blank">LinkedIn</a>
@@ -538,9 +538,9 @@
                         <div class="project-title">HeadTrack-Mouse – Multimodal Assistive HCI</div>
                         <div class="project-desc">
                             <ul>
-                                <li>Fused <strong>MediaPipe Face Mesh (60 FPS)</strong> with an <strong>Arduino + MPU-6050</strong> for decoupled XY-axis cursor tracking (&lt;10ms latency)[cite: 1].</li>
-                                <li>Deployed an <strong>ESP32</strong> with an <strong>I2S mic (INMP441)</strong> using VAD for hands-free screen boundary locking[cite: 1].</li>
-                                <li>Built a <strong>PyQt6</strong> dashboard with <strong>Selenium</strong> automation and a custom AI-driven <strong>Smart Study Assistant</strong>[cite: 1].</li>
+                                <li>Fused <strong>MediaPipe Face Mesh (60 FPS)</strong> with an <strong>Arduino + MPU-6050</strong> for decoupled XY-axis cursor tracking (&lt;10ms latency).</li>
+                                <li>Deployed an <strong>ESP32</strong> with an <strong>I2S mic (INMP441)</strong> using VAD for hands-free screen boundary locking.</li>
+                                <li>Built a <strong>PyQt6</strong> dashboard with <strong>Selenium</strong> automation and a custom AI-driven <strong>Smart Study Assistant</strong>.</li>
                             </ul>
                         </div>
                         <div class="tags">
@@ -891,25 +891,26 @@
             <div class="modal-section">
                 <h4>System Overview & Decoupled Architecture</h4>
                 <p>
-                    Designed to eliminate fine motor control barriers for users with physical mobility challenges, carpal tunnel syndrome, or RSI[cite: 1]. 
-                    Unlike traditional single-sensor eye/face trackers that cause rapid muscle fatigue, this system decouples control axes across three distinct hardware and software modalities to achieve <strong>sub-10ms latency</strong> and millimeter cursor precision[cite: 1]:
+                    Designed to eliminate fine motor control barriers for users with physical mobility challenges, carpal tunnel syndrome, or RSI. 
+                    Unlike traditional single-sensor eye/face trackers that cause rapid muscle fatigue, this system decouples control axes across three distinct hardware and software modalities to achieve <strong>sub-10ms latency</strong> and millimeter cursor precision:
                 </p>
                 <ul>
-                    <li><strong>Horizontal X-Axis Control:</strong> MediaPipe Face Mesh tracking 478 3D landmarks at 60 FPS to detect natural horizontal head rotation[cite: 1]. Includes precision Slow Mode (25% speed via lip-purse gesture) and mouth-pull gestures for left/right clicks[cite: 1].</li>
-                    <li><strong>Vertical Y-Axis Control:</strong> An Arduino Uno R4 WiFi processes 6-axis MPU-6050 accelerometer and gyroscope data at 100 Hz, mapping vertical head pitch through exponential acceleration curves and adaptive smoothing algorithms[cite: 1].</li>
-                    <li><strong>Edge Voice Lock Zones:</strong> An ESP32 connected to an INMP441 I2S digital microphone runs Voice Activity Detection (VAD) streaming audio over high-speed serial[cite: 1]. Commands ("up", "down", "release") instantly anchor the cursor to top/bottom 5% screen boundaries without physical neck craning[cite: 1].</li>
+                    <li><strong>Horizontal X-Axis Control:</strong> MediaPipe Face Mesh tracking 478 3D landmarks at 60 FPS to detect natural horizontal head rotation. Includes precision Slow Mode (25% speed via lip-purse gesture) and mouth-pull gestures for left/right clicks.</li>
+                    <li><strong>Vertical Y-Axis Control:</strong> An Arduino Uno R4 WiFi processes 6-axis MPU-6050 accelerometer and gyroscope data at 100 Hz, mapping vertical head pitch through exponential acceleration curves and adaptive smoothing algorithms.</li>
+                    <li><strong>Edge Voice Lock Zones:</strong> An ESP32 connected to an INMP441 I2S digital microphone runs Voice Activity Detection (VAD) streaming audio over high-speed serial. Commands ("up", "down", "release") instantly anchor the cursor to top/bottom 5% screen boundaries without physical neck craning.</li>
                 </ul>
             </div>
 
             <div class="showcase-grid">
 
-                <!-- 1. System Execution Video (With Comprehensive File Formats) -->
+                <!-- 1. System Execution Video -->
                 <div class="showcase-card">
                     <div class="showcase-img-holder">
                         <video class="showcase-video" autoplay loop muted playsinline controls preload="metadata">
+                            <source src="headtrack_demo.MP4" type="video/mp4">
+                            <source src="headtrack_demo.mp4" type="video/mp4">
                             <source src="headtrack_demo.MOV" type="video/quicktime">
                             <source src="headtrack_demo.mov" type="video/quicktime">
-                            <source src="headtrack_demo.mp4" type="video/mp4">
                             <source src="T.MOV" type="video/quicktime">
                             <source src="T.mov" type="video/quicktime">
                             <source src="T.mp4" type="video/mp4">
@@ -917,15 +918,15 @@
                         </video>
                         <div class="video-fallback-msg">
                             If the video preview does not play automatically due to browser restrictions, 
-                            <a href="headtrack_demo.MOV" target="_blank" download>click here to view / download the raw clip</a>.
+                            <a href="headtrack_demo.MP4" target="_blank" download>click here to view / download the raw clip</a>.
                         </div>
                     </div>
                     <div class="showcase-info">
                         <span class="showcase-badge">Live System Execution</span>
                         <h4>Hands-Free Multimodal Interaction in Action</h4>
                         <p>
-                            Live execution recording demonstrating decoupled cursor tracking driven by MediaPipe facial landmark rotation and MPU-6050 vertical head pitch[cite: 1]. 
-                            Shows real-time activation of the 25% precision Slow Mode and instantaneous screen boundary locking via ESP32 I2S voice commands[cite: 1].
+                            Live execution recording demonstrating decoupled cursor tracking driven by MediaPipe facial landmark rotation and MPU-6050 vertical head pitch. 
+                            Shows real-time activation of the 25% precision Slow Mode and instantaneous screen boundary locking via ESP32 I2S voice commands.
                         </p>
                     </div>
                 </div>
@@ -942,8 +943,8 @@
                         <span class="showcase-badge">PyQt6 Control Panel</span>
                         <h4>Automated University Workflow & Split-Screen Dock</h4>
                         <p>
-                            A compact, hands-free management hub built with <strong>PyQt6</strong> and <strong>Selenium WebDriver</strong>[cite: 1]. 
-                            Automates single-click Blackboard LMS authentication to bypass manual logins, launches voice-activated Gemini AI sessions, and automatically snaps application windows into an ergonomic 30/70 split-screen workspace for hands-free study productivity[cite: 1].
+                            A compact, hands-free management hub built with <strong>PyQt6</strong> and <strong>Selenium WebDriver</strong>. 
+                            Automates single-click Blackboard LMS authentication to bypass manual logins, launches voice-activated Gemini AI sessions, and automatically snaps application windows into an ergonomic 30/70 split-screen workspace for hands-free study productivity.
                         </p>
                     </div>
                 </div>
@@ -960,8 +961,8 @@
                         <span class="showcase-badge">AI Study Assistant</span>
                         <h4>Integrated Lecture Ingestion & Interactive Self-Testing</h4>
                         <p>
-                            Custom web platform engineered to eliminate high cognitive loads and repetitive switching between browser tabs[cite: 1]. 
-                            Allows students to drag-and-drop lecture slides (PDF, PPTX, DOCX) to automatically generate concise summaries, extract core concepts, and produce interactive practice exam questions with self-grading capabilities[cite: 1].
+                            Custom web platform engineered to eliminate high cognitive loads and repetitive switching between browser tabs. 
+                            Allows students to drag-and-drop lecture slides (PDF, PPTX, DOCX) to automatically generate concise summaries, extract core concepts, and produce interactive practice exam questions with self-grading capabilities.
                         </p>
                     </div>
                 </div>
@@ -971,7 +972,7 @@
             <!-- Behind the Code -->
             <div class="modal-section" style="border-top: 1px solid rgba(255,255,255,0.08); padding-top: 1.5rem; text-align: center;">
                 <p style="font-style: italic; color: var(--text-muted); max-width: 700px; margin: 0 auto;">
-                    "This project was just a few touches away from being more perfect, but I realized that development is a never-ending process. Recognizing the 'Perfectionism Trap,' I decided to release it anyway. Special thanks to coffee cups :)"[cite: 1]
+                    "This project was just a few touches away from being more perfect, but I realized that development is a never-ending process. Recognizing the 'Perfectionism Trap,' I decided to release it anyway. Special thanks to coffee cups :)"
                 </p>
             </div>
 
@@ -1008,6 +1009,7 @@
                             <source src="hujou3_light.MOV" type="video/quicktime">
                             <source src="hujou3_light.mov" type="video/quicktime">
                             <source src="hujou3_light.mp4" type="video/mp4">
+                            <source src="hujou3_light.MP4" type="video/mp4">
                             <source src="H.MOV" type="video/quicktime">
                             <source src="H.mov" type="video/quicktime">
                             <source src="H.mp4" type="video/mp4">
@@ -1034,6 +1036,7 @@
                             <source src="hujou3_audio.MOV" type="video/quicktime">
                             <source src="hujou3_audio.mov" type="video/quicktime">
                             <source src="hujou3_audio.mp4" type="video/mp4">
+                            <source src="hujou3_audio.MP4" type="video/mp4">
                             Your browser cannot decode this video codec directly.
                         </video>
                         <div class="video-fallback-msg">
