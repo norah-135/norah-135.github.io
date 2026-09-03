@@ -538,7 +538,7 @@
                         <div class="project-title">HeadTrack-Mouse – Multimodal Assistive HCI</div>
                         <div class="project-desc">
                             <ul>
-                                <li>Fused <strong>MediaPipe Face Mesh (60 FPS)</strong> with an <strong>Arduino + MPU-6050</strong> for decoupled XY-axis cursor tracking (<10ms latency)[cite: 1].</li>
+                                <li>Fused <strong>MediaPipe Face Mesh (60 FPS)</strong> with an <strong>Arduino + MPU-6050</strong> for decoupled XY-axis cursor tracking (&lt;10ms latency)[cite: 1].</li>
                                 <li>Deployed an <strong>ESP32</strong> with an <strong>I2S mic (INMP441)</strong> using VAD for hands-free screen boundary locking[cite: 1].</li>
                                 <li>Built a <strong>PyQt6</strong> dashboard with <strong>Selenium</strong> automation and a custom AI-driven <strong>Smart Study Assistant</strong>[cite: 1].</li>
                             </ul>
@@ -555,11 +555,10 @@
                     </div>
                 </div>
 
-                <!-- Project 3: Hujou3 (Central Smart Voice Hub for Light & MP3 Audio) -->
+                <!-- Project 3: Hujou3 -->
                 <div class="project-card" onclick="openModal('modal-hujou3')">
                     <div class="project-img-wrapper" style="background: radial-gradient(circle at center, #0f1c38 0%, #060a14 100%);">
                         <span class="overlay-badge">Distributed IoT</span>
-                        <!-- Detailed Vector Illustration: Voice-Controlled Central Hub Routing to Audio (MP3) & Tuya Cloud Light -->
                         <svg viewBox="0 0 760 300" width="100%" height="100%" style="padding: 1.2rem;" xmlns="http://www.w3.org/2000/svg">
                             <defs>
                                 <linearGradient id="hubCyan" x1="0%" y1="0%" x2="100%" y2="100%">
@@ -580,55 +579,44 @@
                                 </filter>
                             </defs>
 
-                            <!-- Background Grid Decors -->
                             <circle cx="380" cy="150" r="140" fill="none" stroke="rgba(56, 189, 248, 0.08)" stroke-width="1" stroke-dasharray="4,4"/>
                             <circle cx="380" cy="150" r="190" fill="none" stroke="rgba(56, 189, 248, 0.04)" stroke-width="1" stroke-dasharray="6,6"/>
 
-                            <!-- Left Branch: Central Hub to MP3 Audio System -->
                             <path d="M 310 150 C 230 150, 200 80, 140 80" fill="none" stroke="#34d399" stroke-width="2.5" stroke-dasharray="4,4"/>
                             <polygon points="144,76 132,80 144,84" fill="#34d399"/>
                             <text x="210" y="105" fill="#34d399" font-size="9.5" font-weight="700" text-anchor="middle">UART Commands</text>
                             <text x="210" y="120" fill="#94a3b8" font-size="8.5" text-anchor="middle">Sleep Soundscapes</text>
 
-                            <!-- Node Left: DFPlayer Mini MP3 Player & Speaker -->
                             <g transform="translate(10, 30)">
                                 <rect width="130" height="100" rx="12" fill="#0c1529" stroke="#34d399" stroke-width="1.8" filter="url(#glowSubtle)"/>
                                 <circle cx="45" cy="40" r="16" fill="url(#audioGreen)" opacity="0.2"/>
-                                <!-- MP3 / Speaker Icon -->
                                 <path d="M 38 34 L 46 34 L 54 26 L 54 54 L 46 46 L 38 46 Z" fill="#34d399"/>
                                 <path d="M 58 34 A 8 8 0 0 1 58 46" fill="none" stroke="#34d399" stroke-width="2"/>
                                 <text x="65" y="72" fill="#ffffff" font-size="11" font-weight="700" text-anchor="middle">DFPlayer Mini</text>
                                 <text x="65" y="87" fill="#34d399" font-size="9" font-weight="600" text-anchor="middle">MP3 Audio Player</text>
                             </g>
 
-                            <!-- Right Branch: Central Hub to Tuya Cloud Smart Light -->
                             <path d="M 450 150 C 530 150, 560 80, 620 80" fill="none" stroke="#fbbf24" stroke-width="2.5" stroke-dasharray="4,4"/>
                             <polygon points="616,76 628,80 616,84" fill="#fbbf24"/>
                             <text x="550" y="105" fill="#fbbf24" font-size="9.5" font-weight="700" text-anchor="middle">HMAC-SHA256</text>
                             <text x="550" y="120" fill="#94a3b8" font-size="8.5" text-anchor="middle">Tuya OpenAPI</text>
 
-                            <!-- Node Right: Smart Light Bulb (Tuya Cloud) -->
                             <g transform="translate(620, 30)">
                                 <rect width="130" height="100" rx="12" fill="#0c1529" stroke="#fbbf24" stroke-width="1.8" filter="url(#glowSubtle)"/>
                                 <circle cx="65" cy="40" r="16" fill="url(#lightAmber)" opacity="0.2"/>
-                                <!-- Lightbulb Icon -->
                                 <path d="M 60 28 C 55 32, 55 40, 60 44 L 60 48 L 70 48 L 70 44 C 75 40, 75 32, 70 28 C 66 25, 64 25, 60 28 Z" fill="none" stroke="#fbbf24" stroke-width="2"/>
                                 <line x1="62" y1="51" x2="68" y2="51" stroke="#fbbf24" stroke-width="2"/>
                                 <text x="65" y="72" fill="#ffffff" font-size="11" font-weight="700" text-anchor="middle">Tuya Smart Bulb</text>
                                 <text x="65" y="87" fill="#fbbf24" font-size="9" font-weight="600" text-anchor="middle">Cloud Light Control</text>
                             </g>
 
-                            <!-- Center: The Core Master Voice Controller Hub -->
                             <g transform="translate(305, 80)">
                                 <rect width="150" height="140" rx="16" fill="#111c35" stroke="#38bdf8" stroke-width="2.2" filter="url(#glowSubtle)"/>
-                                
-                                <!-- Pulse Microphone & Speech Waves -->
                                 <circle cx="75" cy="48" r="22" fill="url(#hubCyan)" opacity="0.25"/>
                                 <rect x="70" y="36" width="10" height="18" rx="5" fill="#38bdf8"/>
                                 <path d="M 64 44 A 11 11 0 0 0 86 44" fill="none" stroke="#38bdf8" stroke-width="2"/>
                                 <line x1="75" y1="55" x2="75" y2="61" stroke="#38bdf8" stroke-width="2"/>
 
-                                <!-- Acoustic Input Waves -->
                                 <path d="M 54 40 A 18 18 0 0 0 54 52" fill="none" stroke="rgba(56,189,248,0.6)" stroke-width="1.8"/>
                                 <path d="M 96 40 A 18 18 0 0 1 96 52" fill="none" stroke="rgba(56,189,248,0.6)" stroke-width="1.8"/>
 
@@ -743,25 +731,21 @@
                                 </linearGradient>
                             </defs>
 
-                            <!-- Link 1: Band to App (BLE Beacon) -->
                             <line x1="175" y1="100" x2="255" y2="100" stroke="#34d399" stroke-width="2.5" stroke-dasharray="4,4" />
                             <polygon points="255,96 265,100 255,104" fill="#34d399" />
                             <text x="215" y="85" fill="#34d399" font-size="9.5" font-weight="700" text-anchor="middle">BLE Beacon</text>
                             <text x="215" y="118" fill="#94a3b8" font-size="8.5" text-anchor="middle">Live Vitals</text>
 
-                            <!-- Link 2: App to Cloud (MQTTS over WSS) -->
                             <line x1="395" y1="100" x2="475" y2="100" stroke="#38bdf8" stroke-width="2.5" stroke-dasharray="4,4" />
                             <polygon points="475,96 485,100 475,104" fill="#38bdf8" />
                             <text x="435" y="85" fill="#38bdf8" font-size="9.5" font-weight="700" text-anchor="middle">MQTTS / WSS</text>
                             <text x="435" y="118" fill="#94a3b8" font-size="8.5" text-anchor="middle">JSON Alert</text>
 
-                            <!-- Link 3: Cloud to Drone (LoRa / 4G Telemetry) -->
                             <line x1="615" y1="100" x2="695" y2="100" stroke="#fbbf24" stroke-width="2.5" stroke-dasharray="4,4" />
                             <polygon points="695,96 705,100 695,104" fill="#fbbf24" />
                             <text x="655" y="85" fill="#fbbf24" font-size="9.5" font-weight="700" text-anchor="middle">4G / LoRa Link</text>
                             <text x="655" y="118" fill="#94a3b8" font-size="8.5" text-anchor="middle">Waypoints</text>
 
-                            <!-- Node 1: Smart Sensor Band -->
                             <g transform="translate(35, 40)">
                                 <rect width="140" height="120" rx="14" fill="#0f172a" stroke="#34d399" stroke-width="1.8" />
                                 <circle cx="70" cy="40" r="16" fill="url(#greenGrad)" opacity="0.2" />
@@ -772,7 +756,6 @@
                                 <text x="70" y="108" fill="#94a3b8" font-size="8" text-anchor="middle">Zero-Pairing Broadcast</text>
                             </g>
 
-                            <!-- Node 2: Mobile Dispatch Hub -->
                             <g transform="translate(255, 40)">
                                 <rect width="140" height="120" rx="14" fill="#0f172a" stroke="#38bdf8" stroke-width="1.8" />
                                 <rect x="57" y="25" width="26" height="34" rx="4" fill="none" stroke="#38bdf8" stroke-width="2" />
@@ -782,7 +765,6 @@
                                 <text x="70" y="108" fill="#94a3b8" font-size="8" text-anchor="middle">GPS + SOS Serialization</text>
                             </g>
 
-                            <!-- Node 3: Cloud Broker -->
                             <g transform="translate(475, 40)">
                                 <rect width="140" height="120" rx="14" fill="#0f172a" stroke="#a855f7" stroke-width="1.8" />
                                 <path d="M56 46 a8 8 0 0 1 12 -6 a11 11 0 0 1 18 2 a7 7 0 0 1 -2 14 h-26 a6 6 0 0 1 -2 -10 z" fill="none" stroke="#a855f7" stroke-width="2" />
@@ -791,7 +773,6 @@
                                 <text x="70" y="108" fill="#94a3b8" font-size="8" text-anchor="middle">Sub-second Routing</text>
                             </g>
 
-                            <!-- Node 4: Autonomous VTOL Drone -->
                             <g transform="translate(695, 40)">
                                 <rect width="140" height="120" rx="14" fill="#0f172a" stroke="#fbbf24" stroke-width="1.8" />
                                 <path d="M50 35 L90 35 M70 25 L70 50 M54 44 L86 44" stroke="#fbbf24" stroke-width="2" stroke-linecap="round" />
@@ -907,7 +888,6 @@
             <h2 class="modal-title">HeadTrack-Mouse: Multimodal Assistive HCI</h2>
             <div class="subtitle">Decoupled Dual-Sensor Fusion & Hands-Free Productivity Ecosystem</div>
 
-            <!-- Architectural Overview -->
             <div class="modal-section">
                 <h4>System Overview & Decoupled Architecture</h4>
                 <p>
@@ -921,21 +901,23 @@
                 </ul>
             </div>
 
-            <!-- Visual Showcase Grid -->
             <div class="showcase-grid">
 
-                <!-- 1. System Execution Video -->
+                <!-- 1. System Execution Video (With Comprehensive File Formats) -->
                 <div class="showcase-card">
                     <div class="showcase-img-holder">
                         <video class="showcase-video" autoplay loop muted playsinline controls preload="metadata">
-                            <source src="headtrack_demo.mp4" type="video/mp4">
                             <source src="headtrack_demo.MOV" type="video/quicktime">
                             <source src="headtrack_demo.mov" type="video/quicktime">
+                            <source src="headtrack_demo.mp4" type="video/mp4">
+                            <source src="T.MOV" type="video/quicktime">
+                            <source src="T.mov" type="video/quicktime">
+                            <source src="T.mp4" type="video/mp4">
                             Your browser cannot decode this video codec directly.
                         </video>
                         <div class="video-fallback-msg">
                             If the video preview does not play automatically due to browser restrictions, 
-                            <a href="headtrack_demo.mp4" target="_blank" download>click here to view / download the raw clip</a>.
+                            <a href="headtrack_demo.MOV" target="_blank" download>click here to view / download the raw clip</a>.
                         </div>
                     </div>
                     <div class="showcase-info">
@@ -1006,7 +988,6 @@
             <h2 class="modal-title">Hujou3: Distributed Ambient Intelligence Hub</h2>
             <div class="subtitle">Multi-Node Secure IoT Controller & Deterministic FSM</div>
 
-            <!-- Overview -->
             <div class="modal-section">
                 <h4>Distributed Architecture & Protocol Hardening</h4>
                 <ul>
@@ -1018,21 +999,23 @@
                 </ul>
             </div>
 
-            <!-- Dual Video Demonstrations for Hujou3 -->
             <div class="showcase-grid">
 
                 <!-- 1. Voice-Activated Smart Light Toggle via Tuya Cloud -->
                 <div class="showcase-card">
                     <div class="showcase-img-holder">
                         <video class="showcase-video" autoplay loop muted playsinline controls preload="metadata">
-                            <source src="hujou3_light.mp4" type="video/mp4">
                             <source src="hujou3_light.MOV" type="video/quicktime">
                             <source src="hujou3_light.mov" type="video/quicktime">
+                            <source src="hujou3_light.mp4" type="video/mp4">
+                            <source src="H.MOV" type="video/quicktime">
+                            <source src="H.mov" type="video/quicktime">
+                            <source src="H.mp4" type="video/mp4">
                             Your browser cannot decode this video codec directly.
                         </video>
                         <div class="video-fallback-msg">
                             If the video preview does not play automatically due to browser restrictions, 
-                            <a href="hujou3_light.mp4" target="_blank" download>click here to view / download the raw clip</a>.
+                            <a href="hujou3_light.MOV" target="_blank" download>click here to view / download the raw clip</a>.
                         </div>
                     </div>
                     <div class="showcase-info">
@@ -1048,14 +1031,14 @@
                 <div class="showcase-card">
                     <div class="showcase-img-holder">
                         <video class="showcase-video" autoplay loop muted playsinline controls preload="metadata">
-                            <source src="hujou3_audio.mp4" type="video/mp4">
                             <source src="hujou3_audio.MOV" type="video/quicktime">
                             <source src="hujou3_audio.mov" type="video/quicktime">
+                            <source src="hujou3_audio.mp4" type="video/mp4">
                             Your browser cannot decode this video codec directly.
                         </video>
                         <div class="video-fallback-msg">
                             If the video preview does not play automatically due to browser restrictions, 
-                            <a href="hujou3_audio.mp4" target="_blank" download>click here to view / download the raw clip</a>.
+                            <a href="hujou3_audio.MOV" target="_blank" download>click here to view / download the raw clip</a>.
                         </div>
                     </div>
                     <div class="showcase-info">
