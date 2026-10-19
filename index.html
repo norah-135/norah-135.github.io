@@ -483,11 +483,11 @@
         <header>
             <h1>Norah Nader Alhussain</h1>
             <div class="subtitle">Internet of Things (IoT) & Systems Architecture</div>
-            <p class="bio">B.Sc. in IoT | Embedded Firmware (ESP-IDF/FreeRTOS), Real-Time Low-Latency Telemetry, and Cyber-Physical Systems Architecture.</p>
+            <p class="bio">B.Sc. in IoT | Embedded Firmware (ESP-IDF/FreeRTOS/STM32 Bare-Metal), Real-Time Low-Latency Telemetry, and Cyber-Physical Systems Architecture.</p>
             <div class="links">
                 <a class="btn" href="https://github.com/norah-135" target="_blank">GitHub</a>
                 <a class="btn" href="https://www.linkedin.com/in/norah-alhussain-39b055346" target="_blank">LinkedIn</a>
-                <button class="btn" onclick="copyEmail('norh13335@gmail.com')">Copy Email</button>
+                <button class="btn" onclick="copyEmail('norah.alhusain1@gmail.com')">Copy Email</button>
             </div>
         </header>
 
@@ -640,6 +640,33 @@
                             <span class="tag">Tuya Cloud</span>
                         </div>
                         <div class="click-hint">Click to inspect live demo videos & system protocol ↗</div>
+                    </div>
+                </div>
+
+                <!-- Project 4: FemSense (Confidential / NDA) -->
+                <div class="project-card" onclick="openModal('modal-femsense')">
+                    <div class="project-img-wrapper" style="background: radial-gradient(circle at center, #1e1329 0%, #070b14 100%);">
+                        <img class="project-img" src="femsense_bg.png" alt="FemSense Background Architecture" onerror="this.onerror=null; this.src='femsense_bg.jpg';">
+                        <span class="overlay-badge" style="border-color: #c084fc; color: #c084fc;">Confidential Architecture</span>
+                    </div>
+                    <div class="project-body">
+                        <div class="project-title">FemSense – Battery-Free Passive Wearable & Bio-Sensing Node</div>
+                        <div class="project-desc">
+                            <ul>
+                                <li>Architected a completely battery-free physiological wearable powered entirely via <strong>Passive NFC RF Energy Harvesting</strong>.</li>
+                                <li>Engineered bare-metal firmware on <strong>STM32CubeIDE (Low-Power HAL/LL)</strong> targeting micro-ampere execution profiles.</li>
+                                <li>Integrated high-precision impedance sensing and thermistor front-ends for skin-interfaced health tracking.</li>
+                            </ul>
+                        </div>
+                        <div class="tags">
+                            <span class="tag" style="border-color: rgba(192, 132, 252, 0.3); color: #c084fc;">Energy Harvesting</span>
+                            <span class="tag">Battery-Free IoT</span>
+                            <span class="tag">STM32CubeIDE</span>
+                            <span class="tag">Passive NFC</span>
+                            <span class="tag">Impedance Sensing</span>
+                            <span class="tag">Ultra-Low Power</span>
+                        </div>
+                        <div class="click-hint" style="color: #c084fc;">Click to inspect technical architecture & firmware design ↗</div>
                     </div>
                 </div>
 
@@ -1074,6 +1101,93 @@
             </div>
 
             <a class="btn" href="https://github.com/norah-135/hujou3-voice-powered-room-controller" target="_blank">Open Full GitHub Repository →</a>
+        </div>
+    </div>
+
+    <!-- ═══════════════════════════════════════
+         MODAL 4: FemSense Deep Dive (NDA Safe)
+         ═══════════════════════════════════════ -->
+    <div id="modal-femsense" class="modal">
+        <div class="modal-content">
+            <button class="close-btn" onclick="closeModal('modal-femsense')">&times;</button>
+            <h2 class="modal-title">FemSense: Battery-Free Bio-Sensing Node</h2>
+            <div class="subtitle" style="color: #c084fc;">Passive NFC Energy Harvesting & Ultra-Low-Power Firmware Architecture</div>
+
+            <!-- NDA Notice Banner -->
+            <div style="background: rgba(192, 132, 252, 0.08); border: 1px solid rgba(192, 132, 252, 0.3); border-radius: 12px; padding: 1rem 1.4rem; margin: 1.5rem 0; display: flex; align-items: center; gap: 0.8rem;">
+                <span style="font-size: 1.3rem;">🔒</span>
+                <p style="color: #cbd5e1; font-size: 0.88rem; margin: 0; line-height: 1.5;">
+                    <strong style="color: #c084fc;">Confidentiality Notice:</strong> Proprietary clinical algorithms, circuit schematics, and sensitive operational metrics have been redacted in strict compliance with active Non-Disclosure Agreements (NDA). The deep-dive below focuses exclusively on energy-harvesting hardware architecture and low-power bare-metal firmware design patterns.
+                </p>
+            </div>
+
+            <div class="modal-section">
+                <h4 style="color: #c084fc; border-bottom: 1px solid rgba(192, 132, 252, 0.2);">System Overview & Energy-Autonomous Architecture</h4>
+                <p>
+                    Wearable medical patches commonly face adoption barriers due to rigid form factors, skin irritation, and the heavy physical footprint of rechargeable lithium batteries. 
+                    <strong>FemSense</strong> addresses this paradigm by functioning as an autonomous, battery-free cyber-physical sensing patch. The device harvests electromagnetic RF energy directly from an interrogating smartphone or external NFC transceiver, instantaneously boot-strapping the MCU, sampling analogue biological sensors, and transmitting telemetry via ISO 15693 / NFC Type 5 protocols.
+                </p>
+                <ul>
+                    <li><strong>Passive RF Power Rectification:</strong> Rectifies 13.56 MHz ambient magnetic fields into regulated sub-3.3V DC rails, buffering micro-joules to sustain sensor acquisition bursts.</li>
+                    <li><strong>Deterministic Bare-Metal Lifecycle:</strong> Cold-start boot &rarr; Power-rail stabilization &rarr; Analogue front-end sampling &rarr; Modulated RF backscatter &rarr; Power-down within single-digit milliseconds.</li>
+                    <li><strong>Biomedical Front-End:</strong> Low-noise analog signal conditioning capturing high-precision temperature differentials using NTC thermistors alongside localized bio-impedance variations.</li>
+                </ul>
+            </div>
+
+            <div class="showcase-grid">
+
+                <!-- 1. System Context & Architecture Overview -->
+                <div class="showcase-card">
+                    <div class="showcase-img-holder">
+                        <img class="showcase-img" src="femsense_bg.png" alt="FemSense System Overview & Architecture" onerror="this.onerror=null; this.src='femsense_bg.jpg';">
+                    </div>
+                    <div class="showcase-info">
+                        <span class="showcase-badge" style="background: rgba(192, 132, 252, 0.15); border-color: rgba(192, 132, 252, 0.3); color: #c084fc;">1. System Architecture</span>
+                        <h4>Passive Cyber-Physical System Context</h4>
+                        <p>
+                            High-level block topology detailing energy-autonomous interaction between the skin-conformal sensing patch and the interrogation reader. Depicts RF power harvesting transfer, energy storage buffering, and non-volatile telemetry updates under transient field conditions.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- 2. Physical Device Prototype -->
+                <div class="showcase-card">
+                    <div class="showcase-img-holder">
+                        <img class="showcase-img" src="femsense_device.png" alt="FemSense Wearable Hardware Device" onerror="this.onerror=null; this.src='femsense_device.jpg';">
+                    </div>
+                    <div class="showcase-info">
+                        <span class="showcase-badge" style="background: rgba(192, 132, 252, 0.15); border-color: rgba(192, 132, 252, 0.3); color: #c084fc;">2. Hardware Form-Factor</span>
+                        <h4>Ultra-Thin Battery-Free Hardware Implementation</h4>
+                        <p>
+                            Physical hardware prototype engineered for skin attachment. Integrates passive resonant loop antennas, energy harvesting management IC, and high-precision surface-mount biomedical sensors without requiring internal chemical cells or rigid battery enclosures.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- 3. STM32CubeIDE Bare-Metal Firmware -->
+                <div class="showcase-card">
+                    <div class="showcase-img-holder">
+                        <img class="showcase-img" src="stm32_ide.png" alt="STM32CubeIDE Bare-Metal Firmware Development" onerror="this.onerror=null; this.src='stm32_ide.jpg';">
+                    </div>
+                    <div class="showcase-info">
+                        <span class="showcase-badge" style="background: rgba(192, 132, 252, 0.15); border-color: rgba(192, 132, 252, 0.3); color: #c084fc;">3. Embedded Firmware</span>
+                        <h4>Bare-Metal Firmware & Low-Power Profile (STM32CubeIDE)</h4>
+                        <p>
+                            Custom low-overhead firmware developed in <strong>C</strong> using the <strong>STM32 Low-Layer (LL) and HAL APIs</strong>. Optimized the system clock tree and ADC sampling clocks to operate reliably under strict RF field energy budgets, ensuring atomic data packet writes to non-volatile registers before field collapse.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="modal-section">
+                <h4 style="color: #c084fc; border-bottom: 1px solid rgba(192, 132, 252, 0.2);">Engineering Competencies Highlighted</h4>
+                <ul>
+                    <li><strong>Energy Harvesting Management:</strong> Power-rail sequencing, cold-start power management, and RF coupling optimization.</li>
+                    <li><strong>Micro-Power Embedded C:</strong> Clock-gating, sleep-mode tuning, and ultra-fast non-blocking interrupt routines on ARM Cortex-M.</li>
+                    <li><strong>Bio-Impedance Front-End:</strong> Precision analogue-to-digital sensor conversion under fluctuating supply voltages.</li>
+                </ul>
+            </div>
         </div>
     </div>
 
