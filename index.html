@@ -244,9 +244,7 @@
             font-weight: 600;
         }
 
-        /* ═══════════════════════════════════════
-           Modal (Deep-Dive Technical View)
-           ═══════════════════════════════════════ */
+        /* Modal */
         .modal {
             display: none;
             position: fixed;
@@ -294,7 +292,6 @@
             margin-bottom: 0.3rem;
         }
 
-        /* V-Model SVG Container */
         .vmodel-tracker-card {
             background: linear-gradient(145deg, rgba(16, 24, 40, 0.9), rgba(15, 23, 42, 0.7));
             border: 1px solid var(--glass-border);
@@ -339,7 +336,6 @@
             overflow-x: auto;
         }
 
-        /* Showcase Cards */
         .showcase-grid {
             display: flex;
             flex-direction: column;
@@ -510,14 +506,15 @@
                         <div class="project-title">AeroMedic – Cyber-Physical Autonomous Emergency Ecosystem</div>
                         <div class="project-desc">
                             <ul>
-                                <li>Custom sensor PCB routing in <strong>EasyEDA</strong> (ESP32-C3, Semtech SX1262 LoRa, IMU/Biometrics) with payload casing modeled in <strong>Fusion 360</strong>.</li>
-                                <li>Low-power <strong>ESP-IDF (FreeRTOS)</strong> firmware broadcasting live patient vitals via connectionless <strong>BLE Beacon Mode (NimBLE)</strong>.</li>
+                                <li>Custom sensor PCB routing in <strong>EasyEDA</strong> (ESP32-C3, Semtech SX1262 LoRa, ICM-42688-P IMU, Biometrics) with casing modeled in <strong>Fusion 360</strong>.</li>
+                                <li>Edge-computed <strong>Fall Detection algorithm</strong> running on <strong>ESP-IDF (FreeRTOS)</strong> with dynamic vector thresholding and zero-pairing <strong>BLE Beacon Mode</strong>.</li>
                                 <li>Cross-platform <strong>Flutter</strong> hub streaming emergency telemetry to <strong>MQTTS (EMQX Cloud)</strong> for low-latency emergency dispatch.</li>
                             </ul>
                         </div>
                         <div class="tags">
                             <span class="tag">Hybrid VTOL</span>
                             <span class="tag">ESP-IDF</span>
+                            <span class="tag">Fall Detection</span>
                             <span class="tag">EasyEDA PCB</span>
                             <span class="tag">Fusion 360</span>
                             <span class="tag">MQTTS</span>
@@ -708,7 +705,7 @@
 
             <div class="showcase-grid">
 
-                <!-- Main Architecture Path (Band -> App -> Cloud -> Drone) -->
+                <!-- Main Architecture Path -->
                 <div class="showcase-card">
                     <div class="showcase-img-holder" style="padding: 1.5rem; background: #080d1a;">
                         <svg viewBox="0 0 860 210" width="100%" height="auto" xmlns="http://www.w3.org/2000/svg">
@@ -831,7 +828,28 @@
                     </div>
                 </div>
 
-                <!-- 4. Live Video Execution -->
+                <!-- 4. Wearable Fall Detection Video -->
+                <div class="showcase-card">
+                    <div class="showcase-img-holder">
+                        <video class="showcase-video" autoplay loop muted playsinline controls preload="metadata">
+                            <source src="fall_detection.mp4" type="video/mp4">
+                            Your browser cannot decode this video codec directly.
+                        </video>
+                        <div class="video-fallback-msg">
+                            If the video preview does not play automatically due to browser codec restrictions, 
+                            <a href="fall_detection.mp4" target="_blank" download>click here to view / download the raw clip</a>.
+                        </div>
+                    </div>
+                    <div class="showcase-info">
+                        <span class="showcase-badge">4. Edge Sensing & Telemetry</span>
+                        <h4>Autonomous Fall Detection & Rapid Trigger Verification</h4>
+                        <p>
+                            Real-time validation of edge-computed fall detection utilizing 6-axis IMU telemetry (ICM-42688-P). The firmware continuously evaluates acceleration impact vectors and subsequent immobility windows to filter false positives, immediately initiating autonomous incident serialization and high-priority MQTTS telemetry dispatch to the VTOL unit.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- 5. Live Video Execution -->
                 <div class="showcase-card">
                     <div class="showcase-img-holder">
                         <video class="showcase-video" autoplay loop muted playsinline controls preload="metadata">
@@ -847,19 +865,19 @@
                         </div>
                     </div>
                     <div class="showcase-info">
-                        <span class="showcase-badge">4. Live System Execution</span>
+                        <span class="showcase-badge">5. Live System Execution</span>
                         <h4>End-to-End Emergency Dispatch Execution</h4>
                         <p>Real-time validation of Sprint 1: Actuating the SOS button on the Flutter Hub triggers immediate payload construction containing live biomedical metrics (SpO2: 96%, HR: 82 BPM). Telemetry is securely transported via WebSockets (WSS port 8084) to the cloud broker, instantaneously confirmed by a synchronous <strong>PublishAck</strong> packet.</p>
                     </div>
                 </div>
 
-                <!-- 5. Electrical Circuit Schematic -->
+                <!-- 6. Electrical Circuit Schematic -->
                 <div class="showcase-card">
                     <div class="showcase-img-holder">
                         <img class="showcase-img" src="schematic.png" alt="Schematic Diagram in EasyEDA" onerror="this.src='https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=800&q=80'">
                     </div>
                     <div class="showcase-info">
-                        <span class="showcase-badge">5. Electrical Schematic</span>
+                        <span class="showcase-badge">6. Electrical Schematic</span>
                         <h4>Full Circuit Schematic Diagram (EasyEDA)</h4>
                         <p>Complete circuit design detailing power regulation rails (LDO 3.3V), lithium battery charging and protection sub-circuits, decoupled I2C communication buses for the ICM-42688-P IMU and MAX30102 oximeter, and SPI connections to the SX1262 LoRa transceiver.</p>
                     </div>
